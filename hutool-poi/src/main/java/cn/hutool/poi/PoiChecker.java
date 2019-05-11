@@ -11,17 +11,17 @@ import cn.hutool.core.util.ClassLoaderUtil;
  */
 public class PoiChecker {
 
-	/** 没有引入POI的错误消息 */
-	public static final String NO_POI_ERROR_MSG = "You need to add dependency of 'poi-ooxml' to your project, and version >= 3.17";
+    /** 没有引入POI的错误消息 */
+    public static final String NO_POI_ERROR_MSG = "You need to add dependency of 'poi-ooxml' to your project, and version >= 3.17";
 
-	/**
-	 * 检查POI包的引入情况
-	 */
-	public static void checkPoiImport() {
-		try {
-			Class.forName("org.apache.poi.ss.usermodel.Workbook", false, ClassLoaderUtil.getClassLoader());
-		} catch (ClassNotFoundException | NoClassDefFoundError e) {
-			throw new DependencyException(e, NO_POI_ERROR_MSG);
-		}
-	}
+    /**
+     * 检查POI包的引入情况
+     */
+    public static void checkPoiImport() {
+        try {
+            Class.forName("org.apache.poi.ss.usermodel.Workbook", false, ClassLoaderUtil.getClassLoader());
+        } catch (ClassNotFoundException | NoClassDefFoundError e) {
+            throw new DependencyException(e, NO_POI_ERROR_MSG);
+        }
+    }
 }

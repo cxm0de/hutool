@@ -12,17 +12,17 @@ import cn.hutool.db.Entity;
  *
  */
 public class EntitySetHandler implements RsHandler<LinkedHashSet<Entity>>{
-	
-	/**
-	 * 创建一个 EntityHandler对象
-	 * @return EntityHandler对象
-	 */
-	public static EntitySetHandler create() {
-		return new EntitySetHandler();
-	}
 
-	@Override
-	public LinkedHashSet<Entity> handle(ResultSet rs) throws SQLException {
-		return HandleHelper.handleRs(rs, new LinkedHashSet<Entity>());
-	}
+    /**
+     * 创建一个 EntityHandler对象
+     * @return EntityHandler对象
+     */
+    public static EntitySetHandler create() {
+        return new EntitySetHandler();
+    }
+
+    @Override
+    public LinkedHashSet<Entity> handle(ResultSet rs) throws SQLException {
+        return HandleHelper.handleRs(rs, new LinkedHashSet<Entity>());
+    }
 }

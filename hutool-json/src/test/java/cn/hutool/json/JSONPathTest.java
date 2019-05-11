@@ -11,12 +11,12 @@ import org.junit.Test;
  */
 public class JSONPathTest {
 
-	@Test
-	public void getByPathTest() {
-		String json = "[{\"id\":\"1\",\"name\":\"xingming\"},{\"id\":\"2\",\"name\":\"mingzi\"}]";
-		Object value = JSONUtil.parseArray(json).getByPath("[0].name");
-		Assert.assertEquals("xingming", value);
-		value = JSONUtil.parseArray(json).getByPath("[1].name");
-		Assert.assertEquals("mingzi", value);
-	}
+    @Test
+    public void getByPathTest() {
+        String json = "[{\"id\":\"1\",\"name\":\"xingming\"},{\"id\":\"2\",\"name\":\"mingzi\"}]";
+        Object value = JSONUtil.parseArray(json).getByPath("[0].name");
+        Assert.assertEquals("xingming", value);
+        value = JSONUtil.parseArray(json).getByPath("[1].name");
+        Assert.assertEquals("mingzi", value);
+    }
 }

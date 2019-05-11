@@ -15,24 +15,24 @@ import cn.hutool.poi.exceptions.POIException;
  * @since 3.2.0
  */
 public abstract class AbstractExcelSaxReader<T> implements ExcelSaxReader<T> {
-	
-	@Override
-	public T read(String path) throws POIException {
-		return read(FileUtil.file(path));
-	}
 
-	@Override
-	public T read(File file) throws POIException {
-		return read(file, -1);
-	}
+    @Override
+    public T read(String path) throws POIException {
+        return read(FileUtil.file(path));
+    }
 
-	@Override
-	public T read(InputStream in) throws POIException {
-		return read(in, -1);
-	}
+    @Override
+    public T read(File file) throws POIException {
+        return read(file, -1);
+    }
 
-	@Override
-	public T read(String path, int sheetIndex) throws POIException {
-		return read(FileUtil.file(path), sheetIndex);
-	}
+    @Override
+    public T read(InputStream in) throws POIException {
+        return read(in, -1);
+    }
+
+    @Override
+    public T read(String path, int sheetIndex) throws POIException {
+        return read(FileUtil.file(path), sheetIndex);
+    }
 }

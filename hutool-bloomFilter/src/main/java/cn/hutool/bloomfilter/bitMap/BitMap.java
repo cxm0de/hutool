@@ -8,27 +8,27 @@ package cn.hutool.bloomfilter.bitMap;
  */
 public interface BitMap {
 
-	public final int MACHINE32 = 32;
-	public final int MACHINE64 = 64;
+    public final int MACHINE32 = 32;
+    public final int MACHINE64 = 64;
 
-	/**
-	 * 加入值
-	 * 
-	 * @param i 值
-	 */
-	public void add(long i);
+    /**
+     * 加入值
+     *
+     * @param i 值
+     */
+    public void add(long i);
 
-	/**
-	 * 检查是否包含值
-	 * 
-	 * @param i 值
-	 */
-	public boolean contains(long i);
+    /**
+     * 检查是否包含值
+     *
+     * @param i 值
+     */
+    public boolean contains(long i);
 
-	/**
-	 * 移除值
-	 * 
-	 * @param i 值
-	 */
-	public void remove(long i);
+    /**
+     * 移除值
+     *
+     * @param i 值
+     */
+    public void remove(long i);
 }

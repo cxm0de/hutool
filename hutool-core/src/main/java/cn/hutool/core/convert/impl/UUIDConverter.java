@@ -13,9 +13,9 @@ import cn.hutool.core.convert.AbstractConverter;
  */
 public class UUIDConverter extends AbstractConverter<UUID> {
 
-	@Override
-	protected UUID convertInternal(Object value) {
-		return UUID.fromString(convertToStr(value));
-	}
+    @Override
+    protected UUID convertInternal(Object value) {
+        return UUID.fromString(convertToStr(value));
+    }
 
 }

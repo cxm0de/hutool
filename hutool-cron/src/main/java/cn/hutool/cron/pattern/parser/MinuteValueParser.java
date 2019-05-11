@@ -6,9 +6,9 @@ package cn.hutool.cron.pattern.parser;
  *
  */
 public class MinuteValueParser extends SimpleValueParser{
-	
-	public MinuteValueParser() {
-		super(0, 59);
-	}
+
+    public MinuteValueParser() {
+        super(0, 59);
+    }
 
 }

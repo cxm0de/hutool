@@ -8,6 +8,6 @@ package cn.hutool.log;
  *
  */
 public abstract class AbstractLocationAwareLog extends AbstractLog implements LocationAwareLog{
-	private static final long serialVersionUID = -5529674971846264145L;
+    private static final long serialVersionUID = -5529674971846264145L;
 
 }

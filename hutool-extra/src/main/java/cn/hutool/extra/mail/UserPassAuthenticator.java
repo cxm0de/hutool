@@ -11,24 +11,24 @@ import javax.mail.PasswordAuthentication;
  */
 public class UserPassAuthenticator extends Authenticator {
 
-	private String user;
-	private String pass;
+    private String user;
+    private String pass;
 
-	/**
-	 * 构造
-	 * 
-	 * @param user 用户名
-	 * @param pass 密码
-	 */
-	public UserPassAuthenticator(String user, String pass) {
-		super();
-		this.user = user;
-		this.pass = pass;
-	}
+    /**
+     * 构造
+     *
+     * @param user 用户名
+     * @param pass 密码
+     */
+    public UserPassAuthenticator(String user, String pass) {
+        super();
+        this.user = user;
+        this.pass = pass;
+    }
 
-	@Override
-	protected PasswordAuthentication getPasswordAuthentication() {
-		return new PasswordAuthentication(this.user, this.pass);
-	}
+    @Override
+    protected PasswordAuthentication getPasswordAuthentication() {
+        return new PasswordAuthentication(this.user, this.pass);
+    }
 
 }

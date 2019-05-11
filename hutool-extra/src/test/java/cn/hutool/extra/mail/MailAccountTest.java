@@ -9,13 +9,13 @@ import org.junit.Test;
  *
  */
 public class MailAccountTest {
-	
-	@Test
-	public void parseSettingTest() {
-		MailAccount account = GlobalMailAccount.INSTANCE.getAccount();
-		account.getSmtpProps();
-		
-		Assert.assertNotNull(account.getCharset());
-		Assert.assertTrue(account.isSslEnable());
-	}
+
+    @Test
+    public void parseSettingTest() {
+        MailAccount account = GlobalMailAccount.INSTANCE.getAccount();
+        account.getSmtpProps();
+
+        Assert.assertNotNull(account.getCharset());
+        Assert.assertTrue(account.isSslEnable());
+    }
 }

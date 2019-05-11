@@ -11,24 +11,24 @@ import cn.hutool.core.convert.AbstractConverter;
 @SuppressWarnings({ "unchecked", "rawtypes" })
 public class EnumConverter extends AbstractConverter<Object> {
 
-	private Class enumClass;
-	
-	/**
-	 * 构造
-	 * 
-	 * @param enumClass 转换成的目标Enum类
-	 */
-	public EnumConverter(Class enumClass) {
-		this.enumClass = enumClass;
-	}
+    private Class enumClass;
 
-	@Override
-	protected Object convertInternal(Object value) {
-		return Enum.valueOf(enumClass, convertToStr(value));
-	}
+    /**
+     * 构造
+     *
+     * @param enumClass 转换成的目标Enum类
+     */
+    public EnumConverter(Class enumClass) {
+        this.enumClass = enumClass;
+    }
 
-	@Override
-	public Class getTargetType() {
-		return this.enumClass;
-	}
+    @Override
+    protected Object convertInternal(Object value) {
+        return Enum.valueOf(enumClass, convertToStr(value));
+    }
+
+    @Override
+    public Class getTargetType() {
+        return this.enumClass;
+    }
 }

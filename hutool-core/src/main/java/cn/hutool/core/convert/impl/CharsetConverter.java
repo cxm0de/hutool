@@ -12,9 +12,9 @@ import cn.hutool.core.util.CharsetUtil;
  */
 public class CharsetConverter extends AbstractConverter<Charset>{
 
-	@Override
-	protected Charset convertInternal(Object value) {
-		return CharsetUtil.charset(convertToStr(value));
-	}
+    @Override
+    protected Charset convertInternal(Object value) {
+        return CharsetUtil.charset(convertToStr(value));
+    }
 
 }

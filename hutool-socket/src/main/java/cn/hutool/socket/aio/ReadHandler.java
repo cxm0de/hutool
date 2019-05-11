@@ -12,14 +12,14 @@ import cn.hutool.socket.SocketRuntimeException;
  */
 public class ReadHandler implements CompletionHandler<Integer, AioSession> {
 
-	@Override
-	public void completed(Integer result, AioSession session) {
-		session.callbackRead();
-	}
+    @Override
+    public void completed(Integer result, AioSession session) {
+        session.callbackRead();
+    }
 
-	@Override
-	public void failed(Throwable exc, AioSession session) {
-		throw new SocketRuntimeException(exc);
-	}
+    @Override
+    public void failed(Throwable exc, AioSession session) {
+        throw new SocketRuntimeException(exc);
+    }
 
 }

@@ -14,49 +14,49 @@ import java.io.IOException;
  * @since 4.5.6
  */
 public class ImageSelection implements Transferable {
-	private Image image;
+    private Image image;
 
-	/**
-	 * 构造
-	 * 
-	 * @param image 图片
-	 */
-	public ImageSelection(Image image) {
-		this.image = image;
-	}
+    /**
+     * 构造
+     *
+     * @param image 图片
+     */
+    public ImageSelection(Image image) {
+        this.image = image;
+    }
 
-	/**
-	 * 获取元数据类型信息
-	 * 
-	 * @return 元数据类型列表
-	 */
-	@Override
-	public DataFlavor[] getTransferDataFlavors() {
-		return new DataFlavor[] { DataFlavor.imageFlavor };
-	}
+    /**
+     * 获取元数据类型信息
+     *
+     * @return 元数据类型列表
+     */
+    @Override
+    public DataFlavor[] getTransferDataFlavors() {
+        return new DataFlavor[] { DataFlavor.imageFlavor };
+    }
 
-	/**
-	 * 是否支持指定元数据类型
-	 * 
-	 * @param flavor 元数据类型
-	 * @return 是否支持
-	 */
-	@Override
-	public boolean isDataFlavorSupported(DataFlavor flavor) {
-		return DataFlavor.imageFlavor.equals(flavor);
-	}
+    /**
+     * 是否支持指定元数据类型
+     *
+     * @param flavor 元数据类型
+     * @return 是否支持
+     */
+    @Override
+    public boolean isDataFlavorSupported(DataFlavor flavor) {
+        return DataFlavor.imageFlavor.equals(flavor);
+    }
 
-	/**
-	 * 获取图片
-	 * 
-	 * @param flavor 元数据类型
-	 * @return 转换后的对象
-	 */
-	@Override
-	public Object getTransferData(DataFlavor flavor) throws UnsupportedFlavorException, IOException {
-		if (false == DataFlavor.imageFlavor.equals(flavor)) {
-			throw new UnsupportedFlavorException(flavor);
-		}
-		return image;
-	}
+    /**
+     * 获取图片
+     *
+     * @param flavor 元数据类型
+     * @return 转换后的对象
+     */
+    @Override
+    public Object getTransferData(DataFlavor flavor) throws UnsupportedFlavorException, IOException {
+        if (false == DataFlavor.imageFlavor.equals(flavor)) {
+            throw new UnsupportedFlavorException(flavor);
+        }
+        return image;
+    }
 }

@@ -6,9 +6,9 @@ package cn.hutool.cron.pattern.parser;
  *
  */
 public class YearValueParser extends SimpleValueParser{
-	
-	public YearValueParser() {
-		super(1970, 2099);
-	}
+
+    public YearValueParser() {
+        super(1970, 2099);
+    }
 
 }

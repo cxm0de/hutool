@@ -10,31 +10,31 @@ import java.util.Iterator;
  */
 public class JSONObjectIter implements Iterable<JSONObject> {
 
-	Iterator<Object> iter;
-	
-	public JSONObjectIter(Iterator<Object> iter) {
-		this.iter = iter;
-	}
+    Iterator<Object> iter;
 
-	@Override
-	public Iterator<JSONObject> iterator() {
-		return new Iterator<JSONObject>() {
+    public JSONObjectIter(Iterator<Object> iter) {
+        this.iter = iter;
+    }
 
-			@Override
-			public boolean hasNext() {
-				return iter.hasNext();
-			}
+    @Override
+    public Iterator<JSONObject> iterator() {
+        return new Iterator<JSONObject>() {
 
-			@Override
-			public JSONObject next() {
-				return (JSONObject) iter.next();
-			}
+            @Override
+            public boolean hasNext() {
+                return iter.hasNext();
+            }
 
-			@Override
-			public void remove() {
-				iter.remove();
-			}
-		};
-	}
+            @Override
+            public JSONObject next() {
+                return (JSONObject) iter.next();
+            }
+
+            @Override
+            public void remove() {
+                iter.remove();
+            }
+        };
+    }
 
 }

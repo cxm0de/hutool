@@ -10,12 +10,12 @@ import cn.hutool.db.sql.Wrapper;
  *
  */
 public class PostgresqlDialect extends AnsiSqlDialect{
-	public PostgresqlDialect() {
-		wrapper = new Wrapper('"');
-	}
+    public PostgresqlDialect() {
+        wrapper = new Wrapper('"');
+    }
 
-	@Override
-	public DialectName dialectName() {
-		return DialectName.POSTGREESQL;
-	}
+    @Override
+    public DialectName dialectName() {
+        return DialectName.POSTGREESQL;
+    }
 }

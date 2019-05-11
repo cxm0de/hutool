@@ -12,9 +12,9 @@ import cn.hutool.core.convert.AbstractConverter;
  */
 public class CurrencyConverter extends AbstractConverter<Currency> {
 
-	@Override
-	protected Currency convertInternal(Object value) {
-		return Currency.getInstance(convertToStr(value));
-	}
+    @Override
+    protected Currency convertInternal(Object value) {
+        return Currency.getInstance(convertToStr(value));
+    }
 
 }

@@ -23,46 +23,46 @@ import java.util.List;
  */
 public class CopiedIter<E> implements Iterator<E>, Iterable<E> {
 
-	private List<E> eleList = new LinkedList<>();
-	private Iterator<E> listIterator;
-	
-	public static <V> CopiedIter<V> copyOf(Iterator<V> iterator){
-		return new CopiedIter<>(iterator);
-	}
+    private List<E> eleList = new LinkedList<>();
+    private Iterator<E> listIterator;
 
-	/**
-	 * 构造
-	 * @param iterator 被复制的Iterator
-	 */
-	public CopiedIter(Iterator<E> iterator) {
-		while (iterator.hasNext()) {
-			eleList.add(iterator.next());
-		}
-		this.listIterator = eleList.iterator();
-	}
+    public static <V> CopiedIter<V> copyOf(Iterator<V> iterator){
+        return new CopiedIter<>(iterator);
+    }
 
-	@Override
-	public boolean hasNext() {
-		return this.listIterator.hasNext();
-	}
+    /**
+     * 构造
+     * @param iterator 被复制的Iterator
+     */
+    public CopiedIter(Iterator<E> iterator) {
+        while (iterator.hasNext()) {
+            eleList.add(iterator.next());
+        }
+        this.listIterator = eleList.iterator();
+    }
 
-	@Override
-	public E next() {
-		return this.listIterator.next();
-	}
+    @Override
+    public boolean hasNext() {
+        return this.listIterator.hasNext();
+    }
 
-	/**
-	 * 此对象不支持移除元素
-	 * @throws UnsupportedOperationException 当调用此方法时始终抛出此异常
-	 */
-	@Override
-	public void remove() throws UnsupportedOperationException{
-		throw new UnsupportedOperationException("This is a read-only iterator.");
-	}
+    @Override
+    public E next() {
+        return this.listIterator.next();
+    }
 
-	@Override
-	public Iterator<E> iterator() {
-		return this;
-	}
+    /**
+     * 此对象不支持移除元素
+     * @throws UnsupportedOperationException 当调用此方法时始终抛出此异常
+     */
+    @Override
+    public void remove() throws UnsupportedOperationException{
+        throw new UnsupportedOperationException("This is a read-only iterator.");
+    }
+
+    @Override
+    public Iterator<E> iterator() {
+        return this;
+    }
 
 }

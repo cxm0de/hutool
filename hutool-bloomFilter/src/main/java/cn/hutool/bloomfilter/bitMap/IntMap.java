@@ -7,48 +7,48 @@ package cn.hutool.bloomfilter.bitMap;
  *
  */
 public class IntMap implements BitMap {
-	private static final int MAX = Integer.MAX_VALUE;
+    private static final int MAX = Integer.MAX_VALUE;
 
-	private int[] ints = null;
+    private int[] ints = null;
 
-	/**
-	 * 构造
-	 */
-	public IntMap() {
-		ints = new int[93750000];
-	}
+    /**
+     * 构造
+     */
+    public IntMap() {
+        ints = new int[93750000];
+    }
 
-	/**
-	 * 构造
-	 * 
-	 * @param size 容量
-	 */
-	public IntMap(int size) {
-		ints = new int[size];
-	}
+    /**
+     * 构造
+     *
+     * @param size 容量
+     */
+    public IntMap(int size) {
+        ints = new int[size];
+    }
 
-	@Override
-	public void add(long i) {
-		int r = (int) (i / BitMap.MACHINE32);
-		int c = (int) (i % BitMap.MACHINE32);
-		ints[r] = (int) (ints[r] | (1 << c));
-	}
+    @Override
+    public void add(long i) {
+        int r = (int) (i / BitMap.MACHINE32);
+        int c = (int) (i % BitMap.MACHINE32);
+        ints[r] = (int) (ints[r] | (1 << c));
+    }
 
-	@Override
-	public boolean contains(long i) {
-		int r = (int) (i / BitMap.MACHINE32);
-		int c = (int) (i % BitMap.MACHINE32);
-		if (((int) ((ints[r] >>> c)) & 1) == 1) {
-			return true;
-		}
-		return false;
-	}
+    @Override
+    public boolean contains(long i) {
+        int r = (int) (i / BitMap.MACHINE32);
+        int c = (int) (i % BitMap.MACHINE32);
+        if (((int) ((ints[r] >>> c)) & 1) == 1) {
+            return true;
+        }
+        return false;
+    }
 
-	@Override
-	public void remove(long i) {
-		int r = (int) (i / BitMap.MACHINE32);
-		int c = (int) (i % BitMap.MACHINE32);
-		ints[r] = (int) (ints[r] & (((1 << (c + 1)) - 1) ^ MAX));
-	}
+    @Override
+    public void remove(long i) {
+        int r = (int) (i / BitMap.MACHINE32);
+        int c = (int) (i % BitMap.MACHINE32);
+        ints[r] = (int) (ints[r] & (((1 << (c + 1)) - 1) ^ MAX));
+    }
 
 }

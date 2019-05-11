@@ -11,35 +11,35 @@ import cn.hutool.extra.tokenizer.Word;
  *
  */
 public class HanLPWord implements Word {
-	
-	private Term term;
 
-	/**
-	 * 构造
-	 * 
-	 * @param term {@link Term}
-	 */
-	public HanLPWord(Term term) {
-		this.term = term;
-	}
+    private Term term;
 
-	@Override
-	public String getText() {
-		return term.word;
-	}
-	
-	@Override
-	public int getStartOffset() {
-		return this.term.offset;
-	}
-	
-	@Override
-	public int getEndOffset() {
-		return getStartOffset() + this.term.length();
-	}
+    /**
+     * 构造
+     *
+     * @param term {@link Term}
+     */
+    public HanLPWord(Term term) {
+        this.term = term;
+    }
 
-	@Override
-	public String toString() {
-		return getText();
-	}
+    @Override
+    public String getText() {
+        return term.word;
+    }
+
+    @Override
+    public int getStartOffset() {
+        return this.term.offset;
+    }
+
+    @Override
+    public int getEndOffset() {
+        return getStartOffset() + this.term.length();
+    }
+
+    @Override
+    public String toString() {
+        return getText();
+    }
 }

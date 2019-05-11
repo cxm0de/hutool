@@ -11,12 +11,12 @@ package cn.hutool.core.lang.func;
  * @since 3.2.3
  */
 public interface VoidFunc1<P> {
-	
-	/**
-	 * 执行函数
-	 * 
-	 * @param parameter 参数
-	 * @throws Exception 自定义异常
-	 */
-	void call(P parameter) throws Exception;
+
+    /**
+     * 执行函数
+     *
+     * @param parameter 参数
+     * @throws Exception 自定义异常
+     */
+    void call(P parameter) throws Exception;
 }

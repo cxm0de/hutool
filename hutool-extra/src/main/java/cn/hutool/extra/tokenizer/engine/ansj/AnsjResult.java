@@ -15,35 +15,35 @@ import cn.hutool.extra.tokenizer.Word;
  *
  */
 public class AnsjResult implements Result{
-	
-	Iterator<Term> result;
-	
-	/**
-	 * 构造
-	 * @param ansjResult 分词结果
-	 */
-	public AnsjResult(org.ansj.domain.Result ansjResult) {
-		this.result = ansjResult.iterator();
-	}
 
-	@Override
-	public boolean hasNext() {
-		return result.hasNext();
-	}
+    Iterator<Term> result;
 
-	@Override
-	public Word next() {
-		return new AnsjWord(result.next());
-	}
+    /**
+     * 构造
+     * @param ansjResult 分词结果
+     */
+    public AnsjResult(org.ansj.domain.Result ansjResult) {
+        this.result = ansjResult.iterator();
+    }
 
-	@Override
-	public void remove() {
-		result.remove();
-	}
+    @Override
+    public boolean hasNext() {
+        return result.hasNext();
+    }
 
-	@Override
-	public Iterator<Word> iterator() {
-		return this;
-	}
+    @Override
+    public Word next() {
+        return new AnsjWord(result.next());
+    }
+
+    @Override
+    public void remove() {
+        result.remove();
+    }
+
+    @Override
+    public Iterator<Word> iterator() {
+        return this;
+    }
 
 }

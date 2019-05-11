@@ -9,9 +9,9 @@ import cn.hutool.core.convert.AbstractConverter;
  */
 public class StringConverter extends AbstractConverter<String>{
 
-	@Override
-	protected String convertInternal(Object value) {
-		return convertToStr(value);
-	}
+    @Override
+    protected String convertInternal(Object value) {
+        return convertToStr(value);
+    }
 
 }

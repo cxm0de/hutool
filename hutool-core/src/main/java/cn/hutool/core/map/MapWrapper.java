@@ -17,95 +17,95 @@ import java.util.Set;
  * @since 4.3.3
  */
 public class MapWrapper<K, V> implements Map<K, V>, Iterable<Map.Entry<K, V>>, Serializable, Cloneable {
-	private static final long serialVersionUID = -7524578042008586382L;
-	
-	/** 默认增长因子 */
-	protected static final float DEFAULT_LOAD_FACTOR = 0.75f;
-	/** 默认初始大小 */
-	protected static final int DEFAULT_INITIAL_CAPACITY = 1 << 4; // aka 16
+    private static final long serialVersionUID = -7524578042008586382L;
 
-	private Map<K, V> raw;
+    /** 默认增长因子 */
+    protected static final float DEFAULT_LOAD_FACTOR = 0.75f;
+    /** 默认初始大小 */
+    protected static final int DEFAULT_INITIAL_CAPACITY = 1 << 4; // aka 16
 
-	/**
-	 * 构造
-	 * 
-	 * @param raw 被包装的Map
-	 */
-	public MapWrapper(Map<K, V> raw) {
-		this.raw = raw;
-	}
-	
-	/**
-	 * 获取原始的Map
-	 * @return Map
-	 */
-	public Map<K, V> getRaw(){
-		return this.raw;
-	}
+    private Map<K, V> raw;
 
-	@Override
-	public int size() {
-		return raw.size();
-	}
+    /**
+     * 构造
+     *
+     * @param raw 被包装的Map
+     */
+    public MapWrapper(Map<K, V> raw) {
+        this.raw = raw;
+    }
 
-	@Override
-	public boolean isEmpty() {
-		return raw.isEmpty();
-	}
+    /**
+     * 获取原始的Map
+     * @return Map
+     */
+    public Map<K, V> getRaw(){
+        return this.raw;
+    }
 
-	@Override
-	public boolean containsKey(Object key) {
-		return raw.containsKey(key);
-	}
+    @Override
+    public int size() {
+        return raw.size();
+    }
 
-	@Override
-	public boolean containsValue(Object value) {
-		return raw.containsValue(value);
-	}
+    @Override
+    public boolean isEmpty() {
+        return raw.isEmpty();
+    }
 
-	@Override
-	public V get(Object key) {
-		return raw.get(key);
-	}
+    @Override
+    public boolean containsKey(Object key) {
+        return raw.containsKey(key);
+    }
 
-	@Override
-	public V put(K key, V value) {
-		return raw.put(key, value);
-	}
+    @Override
+    public boolean containsValue(Object value) {
+        return raw.containsValue(value);
+    }
 
-	@Override
-	public V remove(Object key) {
-		return raw.remove(key);
-	}
+    @Override
+    public V get(Object key) {
+        return raw.get(key);
+    }
 
-	@Override
-	public void putAll(Map<? extends K, ? extends V> m) {
-		raw.putAll(m);
-	}
+    @Override
+    public V put(K key, V value) {
+        return raw.put(key, value);
+    }
 
-	@Override
-	public void clear() {
-		raw.clear();
-	}
+    @Override
+    public V remove(Object key) {
+        return raw.remove(key);
+    }
 
-	@Override
-	public Set<K> keySet() {
-		return raw.keySet();
-	}
+    @Override
+    public void putAll(Map<? extends K, ? extends V> m) {
+        raw.putAll(m);
+    }
 
-	@Override
-	public Collection<V> values() {
-		return raw.values();
-	}
+    @Override
+    public void clear() {
+        raw.clear();
+    }
 
-	@Override
-	public Set<Entry<K, V>> entrySet() {
-		return raw.entrySet();
-	}
+    @Override
+    public Set<K> keySet() {
+        return raw.keySet();
+    }
 
-	@Override
-	public Iterator<Entry<K, V>> iterator() {
-		return this.entrySet().iterator();
-	}
+    @Override
+    public Collection<V> values() {
+        return raw.values();
+    }
+
+    @Override
+    public Set<Entry<K, V>> entrySet() {
+        return raw.entrySet();
+    }
+
+    @Override
+    public Iterator<Entry<K, V>> iterator() {
+        return this.entrySet().iterator();
+    }
 
 }

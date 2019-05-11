@@ -15,33 +15,33 @@ import java.util.concurrent.Semaphore;
  */
 public class SemaphoreRunnable implements Runnable {
 
-	/** 实际执行的逻辑 */
-	private Runnable runnable;
-	/** 信号量 */
-	private Semaphore semaphore;
+    /** 实际执行的逻辑 */
+    private Runnable runnable;
+    /** 信号量 */
+    private Semaphore semaphore;
 
-	/**
-	 * 构造
-	 * 
-	 * @param runnable 实际执行的线程逻辑
-	 * @param semaphore 信号量，多个线程必须共享同一信号量
-	 */
-	public SemaphoreRunnable(Runnable runnable, Semaphore semaphore) {
-		this.runnable = runnable;
-		this.semaphore = semaphore;
-	}
+    /**
+     * 构造
+     *
+     * @param runnable 实际执行的线程逻辑
+     * @param semaphore 信号量，多个线程必须共享同一信号量
+     */
+    public SemaphoreRunnable(Runnable runnable, Semaphore semaphore) {
+        this.runnable = runnable;
+        this.semaphore = semaphore;
+    }
 
-	@Override
-	public void run() {
-		if (null != this.semaphore) {
-			try {
-				semaphore.acquire();
-				this.runnable.run();
-			} catch (InterruptedException e) {
-				Thread.currentThread().interrupt();
-			} finally {
-				semaphore.release();
-			}
-		}
-	}
+    @Override
+    public void run() {
+        if (null != this.semaphore) {
+            try {
+                semaphore.acquire();
+                this.runnable.run();
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            } finally {
+                semaphore.release();
+            }
+        }
+    }
 }

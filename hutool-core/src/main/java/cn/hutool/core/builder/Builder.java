@@ -8,10 +8,10 @@ package cn.hutool.core.builder;
  * @since 4.2.2
  */
 public interface Builder<T> {
-	/**
-	 * 构建
-	 * 
-	 * @return 被构建的对象
-	 */
-	T build();
+    /**
+     * 构建
+     *
+     * @return 被构建的对象
+     */
+    T build();
 }

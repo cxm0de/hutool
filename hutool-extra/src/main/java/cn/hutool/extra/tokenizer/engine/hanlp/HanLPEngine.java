@@ -16,28 +16,28 @@ import cn.hutool.extra.tokenizer.Result;
  */
 public class HanLPEngine implements TokenizerEngine {
 
-	private Segment seg;
-	
-	/**
-	 * 构造
-	 * 
-	 */
-	public HanLPEngine() {
-		this(HanLP.newSegment());
-	}
-	
-	/**
-	 * 构造
-	 * 
-	 * @param seg {@link Segment}
-	 */
-	public HanLPEngine(Segment seg) {
-		this.seg = seg;
-	}
+    private Segment seg;
 
-	@Override
-	public Result parse(CharSequence text) {
-		return new HanLPResult(this.seg.seg(StrUtil.str(text)));
-	}
+    /**
+     * 构造
+     *
+     */
+    public HanLPEngine() {
+        this(HanLP.newSegment());
+    }
+
+    /**
+     * 构造
+     *
+     * @param seg {@link Segment}
+     */
+    public HanLPEngine(Segment seg) {
+        this.seg = seg;
+    }
+
+    @Override
+    public Result parse(CharSequence text) {
+        return new HanLPResult(this.seg.seg(StrUtil.str(text)));
+    }
 
 }

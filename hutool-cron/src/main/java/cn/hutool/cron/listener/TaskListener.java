@@ -9,24 +9,24 @@ import cn.hutool.cron.TaskExecutor;
  *
  */
 public interface TaskListener {
-	/**
-	 * 定时任务启动时触发
-	 * @param executor {@link TaskExecutor}
-	 */
-	public void onStart(TaskExecutor executor);
-	
-	/**
-	 * 任务成功结束时触发
-	 * 
-	 * @param executor {@link TaskExecutor}
-	 */
-	public void onSucceeded(TaskExecutor executor);
+    /**
+     * 定时任务启动时触发
+     * @param executor {@link TaskExecutor}
+     */
+    public void onStart(TaskExecutor executor);
 
-	/**
-	 * 任务启动失败时触发
-	 * 
-	 * @param executor {@link TaskExecutor}
-	 * @param exception 异常
-	 */
-	public void onFailed(TaskExecutor executor, Throwable exception);
+    /**
+     * 任务成功结束时触发
+     *
+     * @param executor {@link TaskExecutor}
+     */
+    public void onSucceeded(TaskExecutor executor);
+
+    /**
+     * 任务启动失败时触发
+     *
+     * @param executor {@link TaskExecutor}
+     * @param exception 异常
+     */
+    public void onFailed(TaskExecutor executor, Throwable exception);
 }

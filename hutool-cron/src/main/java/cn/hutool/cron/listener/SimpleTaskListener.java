@@ -10,18 +10,18 @@ import cn.hutool.cron.TaskExecutor;
  */
 public class SimpleTaskListener implements TaskListener{
 
-	@Override
-	public void onStart(TaskExecutor executor) {
-	}
+    @Override
+    public void onStart(TaskExecutor executor) {
+    }
 
-	@Override
-	public void onSucceeded(TaskExecutor executor) {
-		
-	}
+    @Override
+    public void onSucceeded(TaskExecutor executor) {
 
-	@Override
-	public void onFailed(TaskExecutor executor, Throwable exception) {
+    }
 
-	}
+    @Override
+    public void onFailed(TaskExecutor executor, Throwable exception) {
+
+    }
 
 }

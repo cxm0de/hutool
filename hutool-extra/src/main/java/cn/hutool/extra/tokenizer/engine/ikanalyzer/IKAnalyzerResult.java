@@ -18,28 +18,28 @@ import cn.hutool.extra.tokenizer.Word;
  */
 public class IKAnalyzerResult extends AbstractResult {
 
-	private IKSegmenter seg;
+    private IKSegmenter seg;
 
-	/**
-	 * 构造
-	 * 
-	 * @param seg 分词结果
-	 */
-	public IKAnalyzerResult(IKSegmenter seg) {
-		this.seg = seg;
-	}
+    /**
+     * 构造
+     *
+     * @param seg 分词结果
+     */
+    public IKAnalyzerResult(IKSegmenter seg) {
+        this.seg = seg;
+    }
 
-	@Override
-	protected Word nextWord() {
-		Lexeme next = null;
-		try {
-			next = this.seg.next();
-		} catch (IOException e) {
-			throw new TokenizerException(e);
-		}
-		if (null != next) {
-			return new IKAnalyzerWord(next);
-		}
-		return null;
-	}
+    @Override
+    protected Word nextWord() {
+        Lexeme next = null;
+        try {
+            next = this.seg.next();
+        } catch (IOException e) {
+            throw new TokenizerException(e);
+        }
+        if (null != next) {
+            return new IKAnalyzerWord(next);
+        }
+        return null;
+    }
 }

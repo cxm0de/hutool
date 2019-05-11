@@ -16,29 +16,29 @@ import cn.hutool.extra.tokenizer.Result;
  */
 public class JiebaEngine implements TokenizerEngine {
 
-	private JiebaSegmenter jiebaSegmenter;
-	private SegMode mode;
-	
-	/**
-	 * 构造
-	 */
-	public JiebaEngine() {
-		this(SegMode.SEARCH);
-	}
-	
-	/**
-	 * 构造
-	 * 
-	 * @param mode 模式{@link SegMode}
-	 */
-	public JiebaEngine(SegMode mode) {
-		this.jiebaSegmenter = new JiebaSegmenter();
-		this.mode = mode;
-	}
+    private JiebaSegmenter jiebaSegmenter;
+    private SegMode mode;
 
-	@Override
-	public Result parse(CharSequence text) {
-		return new JiebaResult(jiebaSegmenter.process(StrUtil.str(text), mode));
-	}
+    /**
+     * 构造
+     */
+    public JiebaEngine() {
+        this(SegMode.SEARCH);
+    }
+
+    /**
+     * 构造
+     *
+     * @param mode 模式{@link SegMode}
+     */
+    public JiebaEngine(SegMode mode) {
+        this.jiebaSegmenter = new JiebaSegmenter();
+        this.mode = mode;
+    }
+
+    @Override
+    public Result parse(CharSequence text) {
+        return new JiebaResult(jiebaSegmenter.process(StrUtil.str(text), mode));
+    }
 
 }

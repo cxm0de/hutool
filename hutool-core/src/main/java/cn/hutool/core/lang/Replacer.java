@@ -10,12 +10,12 @@ package cn.hutool.core.lang;
  * @since 4.1.5
  */
 public interface Replacer<T> {
-	
-	/**
-	 * 替换指定类型为目标类型
-	 * 
-	 * @param t 被替换的对象
-	 * @return 替代后的对象
-	 */
-	public T replace(T t);
+
+    /**
+     * 替换指定类型为目标类型
+     *
+     * @param t 被替换的对象
+     * @return 替代后的对象
+     */
+    public T replace(T t);
 }

@@ -11,11 +11,11 @@ import org.apache.lucene.analysis.cn.smart.SmartChineseAnalyzer;
  */
 public class SmartcnEngine extends AnalysisEngine {
 
-	/**
-	 * 构造
-	 */
-	public SmartcnEngine() {
-		super(new SmartChineseAnalyzer());
-	}
-	
+    /**
+     * 构造
+     */
+    public SmartcnEngine() {
+        super(new SmartChineseAnalyzer());
+    }
+
 }

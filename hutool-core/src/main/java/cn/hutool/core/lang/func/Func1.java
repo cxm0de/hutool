@@ -13,13 +13,13 @@ package cn.hutool.core.lang.func;
  * @since 4.2.2
  */
 public interface Func1<P, R> {
-	
-	/**
-	 * 执行函数
-	 * 
-	 * @param parameter 参数
-	 * @return 函数执行结果
-	 * @throws Exception 自定义异常
-	 */
-	R call(P parameter) throws Exception;
+
+    /**
+     * 执行函数
+     *
+     * @param parameter 参数
+     * @return 函数执行结果
+     * @throws Exception 自定义异常
+     */
+    R call(P parameter) throws Exception;
 }

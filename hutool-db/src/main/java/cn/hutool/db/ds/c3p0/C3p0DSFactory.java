@@ -18,37 +18,37 @@ import cn.hutool.setting.Setting;
  */
 public class C3p0DSFactory extends AbstractDSFactory {
 
-	public static final String DS_NAME = "C3P0";
+    public static final String DS_NAME = "C3P0";
 
-	/**
-	 * 构造，使用默认配置
-	 */
-	public C3p0DSFactory() {
-		this(null);
-	}
+    /**
+     * 构造，使用默认配置
+     */
+    public C3p0DSFactory() {
+        this(null);
+    }
 
-	/**
-	 * 构造
-	 * 
-	 * @param setting 配置
-	 */
-	public C3p0DSFactory(Setting setting) {
-		super(DS_NAME, ComboPooledDataSource.class, setting);
-	}
-	
-	@Override
-	protected DataSource createDataSource(String jdbcUrl, String driver, String user, String pass, Setting poolSetting) {
-		final ComboPooledDataSource ds = new ComboPooledDataSource();
-		ds.setJdbcUrl(jdbcUrl);
-		try {
-			ds.setDriverClass(driver);
-		} catch (PropertyVetoException e) {
-			throw new DbRuntimeException(e);
-		}
-		ds.setUser(user);
-		ds.setPassword(pass);
-		poolSetting.toBean(ds);// 注入属性
-		
-		return ds;
-	}
+    /**
+     * 构造
+     *
+     * @param setting 配置
+     */
+    public C3p0DSFactory(Setting setting) {
+        super(DS_NAME, ComboPooledDataSource.class, setting);
+    }
+
+    @Override
+    protected DataSource createDataSource(String jdbcUrl, String driver, String user, String pass, Setting poolSetting) {
+        final ComboPooledDataSource ds = new ComboPooledDataSource();
+        ds.setJdbcUrl(jdbcUrl);
+        try {
+            ds.setDriverClass(driver);
+        } catch (PropertyVetoException e) {
+            throw new DbRuntimeException(e);
+        }
+        ds.setUser(user);
+        ds.setPassword(pass);
+        poolSetting.toBean(ds);// 注入属性
+
+        return ds;
+    }
 }

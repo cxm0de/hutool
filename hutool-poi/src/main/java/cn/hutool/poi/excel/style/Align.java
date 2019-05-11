@@ -7,5 +7,5 @@ package cn.hutool.poi.excel.style;
  * @since 4.1.0
  */
 public enum Align {
-	LEFT, RIGHT, CENTER
+    LEFT, RIGHT, CENTER
 }

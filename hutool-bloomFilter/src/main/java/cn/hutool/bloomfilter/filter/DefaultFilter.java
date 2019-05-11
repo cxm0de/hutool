@@ -9,16 +9,16 @@ import cn.hutool.core.util.HashUtil;
  */
 public class DefaultFilter extends AbstractFilter {
 
-	public DefaultFilter(long maxValue, int MACHINENUM) {
-		super(maxValue, MACHINENUM);
-	}
-	
-	public DefaultFilter(long maxValue) {
-		super(maxValue);
-	}
-	
-	@Override
-	public long hash(String str) {
-		return HashUtil.javaDefaultHash(str) % size;
-	}
+    public DefaultFilter(long maxValue, int MACHINENUM) {
+        super(maxValue, MACHINENUM);
+    }
+
+    public DefaultFilter(long maxValue) {
+        super(maxValue);
+    }
+
+    @Override
+    public long hash(String str) {
+        return HashUtil.javaDefaultHash(str) % size;
+    }
 }

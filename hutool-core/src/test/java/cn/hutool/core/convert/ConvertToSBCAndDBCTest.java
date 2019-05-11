@@ -14,17 +14,17 @@ import cn.hutool.core.convert.Convert;
  */
 public class ConvertToSBCAndDBCTest {
 
-	@Test
-	public void toSBCTest() {
-		String a = "123456789";
-		String sbc = Convert.toSBC(a);
-		Assert.assertEquals("１２３４５６７８９", sbc);
-	}
-	
-	@Test
-	public void toDBCTest() {
-		String a = "１２３４５６７８９";
-		String dbc = Convert.toDBC(a);
-		Assert.assertEquals("123456789", dbc);
-	}
+    @Test
+    public void toSBCTest() {
+        String a = "123456789";
+        String sbc = Convert.toSBC(a);
+        Assert.assertEquals("１２３４５６７８９", sbc);
+    }
+
+    @Test
+    public void toDBCTest() {
+        String a = "１２３４５６７８９";
+        String dbc = Convert.toDBC(a);
+        Assert.assertEquals("123456789", dbc);
+    }
 }

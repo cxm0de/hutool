@@ -10,13 +10,13 @@ import cn.hutool.core.util.BooleanUtil;
  */
 public class BooleanConverter extends AbstractConverter<Boolean>{
 
-	@Override
-	protected Boolean convertInternal(Object value) {
-		if(boolean.class == value.getClass()){
-			return Boolean.valueOf((boolean)value);
-		}
-		String valueStr = convertToStr(value);
-		return Boolean.valueOf(BooleanUtil.toBoolean(valueStr));
-	}
+    @Override
+    protected Boolean convertInternal(Object value) {
+        if(boolean.class == value.getClass()){
+            return Boolean.valueOf((boolean)value);
+        }
+        String valueStr = convertToStr(value);
+        return Boolean.valueOf(BooleanUtil.toBoolean(valueStr));
+    }
 
 }

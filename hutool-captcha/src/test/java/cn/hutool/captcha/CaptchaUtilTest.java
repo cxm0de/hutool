@@ -3,11 +3,11 @@ package cn.hutool.captcha;
 import org.junit.Test;
 
 public class CaptchaUtilTest {
-	
-	@Test
-	public void createTest() {
-		for(int i = 0; i < 1; i++) {
-			CaptchaUtil.createShearCaptcha(320, 240);
-		}
-	}
+
+    @Test
+    public void createTest() {
+        for(int i = 0; i < 1; i++) {
+            CaptchaUtil.createShearCaptcha(320, 240);
+        }
+    }
 }

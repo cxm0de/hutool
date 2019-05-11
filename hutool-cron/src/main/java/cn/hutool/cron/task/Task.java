@@ -6,9 +6,9 @@ package cn.hutool.cron.task;
  *
  */
 public interface Task {
-	
-	/**
-	 * 执行作业
-	 */
-	public void execute();
+
+    /**
+     * 执行作业
+     */
+    public void execute();
 }

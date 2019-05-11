@@ -19,160 +19,160 @@ import cn.hutool.crypto.SecureUtil;
  */
 public class DESede extends SymmetricCrypto {
 
-	// ------------------------------------------------------------------------- Constructor start
-	/**
-	 * 构造，默认DESede/ECB/PKCS5Padding，使用随机密钥
-	 */
-	public DESede() {
-		super(SymmetricAlgorithm.DESede);
-	}
+    // ------------------------------------------------------------------------- Constructor start
+    /**
+     * 构造，默认DESede/ECB/PKCS5Padding，使用随机密钥
+     */
+    public DESede() {
+        super(SymmetricAlgorithm.DESede);
+    }
 
-	/**
-	 * 构造，使用默认的DESede/ECB/PKCS5Padding
-	 * 
-	 * @param key 密钥
-	 */
-	public DESede(byte[] key) {
-		super(SymmetricAlgorithm.DESede, key);
-	}
+    /**
+     * 构造，使用默认的DESede/ECB/PKCS5Padding
+     *
+     * @param key 密钥
+     */
+    public DESede(byte[] key) {
+        super(SymmetricAlgorithm.DESede, key);
+    }
 
-	/**
-	 * 构造，使用随机密钥
-	 * 
-	 * @param mode 模式{@link Mode}
-	 * @param padding {@link Padding}补码方式
-	 */
-	public DESede(Mode mode, Padding padding) {
-		this(mode.name(), padding.name());
-	}
+    /**
+     * 构造，使用随机密钥
+     *
+     * @param mode 模式{@link Mode}
+     * @param padding {@link Padding}补码方式
+     */
+    public DESede(Mode mode, Padding padding) {
+        this(mode.name(), padding.name());
+    }
 
-	/**
-	 * 构造
-	 * 
-	 * @param mode 模式{@link Mode}
-	 * @param padding {@link Padding}补码方式
-	 * @param key 密钥，长度24位
-	 */
-	public DESede(Mode mode, Padding padding, byte[] key) {
-		this(mode, padding, key, null);
-	}
+    /**
+     * 构造
+     *
+     * @param mode 模式{@link Mode}
+     * @param padding {@link Padding}补码方式
+     * @param key 密钥，长度24位
+     */
+    public DESede(Mode mode, Padding padding, byte[] key) {
+        this(mode, padding, key, null);
+    }
 
-	/**
-	 * 构造
-	 * 
-	 * @param mode 模式{@link Mode}
-	 * @param padding {@link Padding}补码方式
-	 * @param key 密钥，长度24位
-	 * @param iv 偏移向量，加盐
-	 * @since 3.3.0
-	 */
-	public DESede(Mode mode, Padding padding, byte[] key, byte[] iv) {
-		this(mode.name(), padding.name(), key, iv);
-	}
+    /**
+     * 构造
+     *
+     * @param mode 模式{@link Mode}
+     * @param padding {@link Padding}补码方式
+     * @param key 密钥，长度24位
+     * @param iv 偏移向量，加盐
+     * @since 3.3.0
+     */
+    public DESede(Mode mode, Padding padding, byte[] key, byte[] iv) {
+        this(mode.name(), padding.name(), key, iv);
+    }
 
-	/**
-	 * 构造
-	 * 
-	 * @param mode 模式{@link Mode}
-	 * @param padding {@link Padding}补码方式
-	 * @param key 密钥，长度24位
-	 * @since 3.3.0
-	 */
-	public DESede(Mode mode, Padding padding, SecretKey key) {
-		this(mode, padding, key, null);
-	}
+    /**
+     * 构造
+     *
+     * @param mode 模式{@link Mode}
+     * @param padding {@link Padding}补码方式
+     * @param key 密钥，长度24位
+     * @since 3.3.0
+     */
+    public DESede(Mode mode, Padding padding, SecretKey key) {
+        this(mode, padding, key, null);
+    }
 
-	/**
-	 * 构造
-	 * 
-	 * @param mode 模式{@link Mode}
-	 * @param padding {@link Padding}补码方式
-	 * @param key 密钥，长度24位
-	 * @param iv 偏移向量，加盐
-	 * @since 3.3.0
-	 */
-	public DESede(Mode mode, Padding padding, SecretKey key, IvParameterSpec iv) {
-		this(mode.name(), padding.name(), key, iv);
-	}
+    /**
+     * 构造
+     *
+     * @param mode 模式{@link Mode}
+     * @param padding {@link Padding}补码方式
+     * @param key 密钥，长度24位
+     * @param iv 偏移向量，加盐
+     * @since 3.3.0
+     */
+    public DESede(Mode mode, Padding padding, SecretKey key, IvParameterSpec iv) {
+        this(mode.name(), padding.name(), key, iv);
+    }
 
-	/**
-	 * 构造
-	 * 
-	 * @param mode 模式
-	 * @param padding 补码方式
-	 */
-	public DESede(String mode, String padding) {
-		this(mode, padding, (byte[]) null);
-	}
+    /**
+     * 构造
+     *
+     * @param mode 模式
+     * @param padding 补码方式
+     */
+    public DESede(String mode, String padding) {
+        this(mode, padding, (byte[]) null);
+    }
 
-	/**
-	 * 构造
-	 * 
-	 * @param mode 模式
-	 * @param padding 补码方式
-	 * @param key 密钥，长度24位
-	 */
-	public DESede(String mode, String padding, byte[] key) {
-		this(mode, padding, key, null);
-	}
+    /**
+     * 构造
+     *
+     * @param mode 模式
+     * @param padding 补码方式
+     * @param key 密钥，长度24位
+     */
+    public DESede(String mode, String padding, byte[] key) {
+        this(mode, padding, key, null);
+    }
 
-	/**
-	 * 构造
-	 * 
-	 * @param mode 模式
-	 * @param padding 补码方式
-	 * @param key 密钥，长度24位
-	 * @param iv 加盐
-	 */
-	public DESede(String mode, String padding, byte[] key, byte[] iv) {
-		this(mode, padding, SecureUtil.generateKey(SymmetricAlgorithm.DESede.getValue(), key), null == iv ? null : new IvParameterSpec(iv));
-	}
+    /**
+     * 构造
+     *
+     * @param mode 模式
+     * @param padding 补码方式
+     * @param key 密钥，长度24位
+     * @param iv 加盐
+     */
+    public DESede(String mode, String padding, byte[] key, byte[] iv) {
+        this(mode, padding, SecureUtil.generateKey(SymmetricAlgorithm.DESede.getValue(), key), null == iv ? null : new IvParameterSpec(iv));
+    }
 
-	/**
-	 * 构造
-	 * 
-	 * @param mode 模式
-	 * @param padding 补码方式
-	 * @param key 密钥
-	 */
-	public DESede(String mode, String padding, SecretKey key) {
-		this(mode, padding, key, null);
-	}
+    /**
+     * 构造
+     *
+     * @param mode 模式
+     * @param padding 补码方式
+     * @param key 密钥
+     */
+    public DESede(String mode, String padding, SecretKey key) {
+        this(mode, padding, key, null);
+    }
 
-	/**
-	 * 构造
-	 * 
-	 * @param mode 模式
-	 * @param padding 补码方式
-	 * @param key 密钥
-	 * @param iv 加盐
-	 */
-	public DESede(String mode, String padding, SecretKey key, IvParameterSpec iv) {
-		super(StrUtil.format("{}/{}/{}", SymmetricAlgorithm.DESede.getValue(), mode, padding), key, iv);
-	}
-	// ------------------------------------------------------------------------- Constructor end
+    /**
+     * 构造
+     *
+     * @param mode 模式
+     * @param padding 补码方式
+     * @param key 密钥
+     * @param iv 加盐
+     */
+    public DESede(String mode, String padding, SecretKey key, IvParameterSpec iv) {
+        super(StrUtil.format("{}/{}/{}", SymmetricAlgorithm.DESede.getValue(), mode, padding), key, iv);
+    }
+    // ------------------------------------------------------------------------- Constructor end
 
-	/**
-	 * 设置偏移向量
-	 * 
-	 * @param iv {@link IvParameterSpec}偏移向量
-	 * @return 自身
-	 */
-	public DESede setIv(IvParameterSpec iv) {
-		super.setParams(iv);
-		return this;
-	}
+    /**
+     * 设置偏移向量
+     *
+     * @param iv {@link IvParameterSpec}偏移向量
+     * @return 自身
+     */
+    public DESede setIv(IvParameterSpec iv) {
+        super.setParams(iv);
+        return this;
+    }
 
-	/**
-	 * 设置偏移向量
-	 * 
-	 * @param iv 偏移向量，加盐
-	 * @return 自身
-	 * @since 3.3.0
-	 */
-	public DESede setIv(byte[] iv) {
-		setIv(new IvParameterSpec(iv));
-		return this;
-	}
+    /**
+     * 设置偏移向量
+     *
+     * @param iv 偏移向量，加盐
+     * @return 自身
+     * @since 3.3.0
+     */
+    public DESede setIv(byte[] iv) {
+        setIv(new IvParameterSpec(iv));
+        return this;
+    }
 
 }

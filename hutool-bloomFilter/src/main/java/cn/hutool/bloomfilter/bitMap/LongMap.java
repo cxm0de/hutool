@@ -8,48 +8,48 @@ package cn.hutool.bloomfilter.bitMap;
  */
 public class LongMap implements BitMap {
 
-	private static final long MAX = Long.MAX_VALUE;
+    private static final long MAX = Long.MAX_VALUE;
 
-	private long[] longs = null;
+    private long[] longs = null;
 
-	/**
-	 * 构造
-	 */
-	public LongMap() {
-		longs = new long[93750000];
-	}
+    /**
+     * 构造
+     */
+    public LongMap() {
+        longs = new long[93750000];
+    }
 
-	/**
-	 * 构造
-	 * 
-	 * @param size 容量
-	 */
-	public LongMap(int size) {
-		longs = new long[size];
-	}
+    /**
+     * 构造
+     *
+     * @param size 容量
+     */
+    public LongMap(int size) {
+        longs = new long[size];
+    }
 
-	@Override
-	public void add(long i) {
-		int r = (int) (i / BitMap.MACHINE64);
-		long c = i % BitMap.MACHINE64;
-		longs[r] = longs[r] | (1 << c);
-	}
+    @Override
+    public void add(long i) {
+        int r = (int) (i / BitMap.MACHINE64);
+        long c = i % BitMap.MACHINE64;
+        longs[r] = longs[r] | (1 << c);
+    }
 
-	@Override
-	public boolean contains(long i) {
-		int r = (int) (i / BitMap.MACHINE64);
-		long c = i % BitMap.MACHINE64;
-		if (((longs[r] >>> c) & 1) == 1) {
-			return true;
-		}
-		return false;
-	}
+    @Override
+    public boolean contains(long i) {
+        int r = (int) (i / BitMap.MACHINE64);
+        long c = i % BitMap.MACHINE64;
+        if (((longs[r] >>> c) & 1) == 1) {
+            return true;
+        }
+        return false;
+    }
 
-	@Override
-	public void remove(long i) {
-		int r = (int) (i / BitMap.MACHINE64);
-		long c = i % BitMap.MACHINE64;
-		longs[r] = longs[r] & (((1 << (c + 1)) - 1) ^ MAX);
-	}
+    @Override
+    public void remove(long i) {
+        int r = (int) (i / BitMap.MACHINE64);
+        long c = i % BitMap.MACHINE64;
+        longs[r] = longs[r] & (((1 << (c + 1)) - 1) ^ MAX);
+    }
 
 }

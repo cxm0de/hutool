@@ -11,34 +11,34 @@ import cn.hutool.extra.tokenizer.Word;
  *
  */
 public class JiebaWord implements Word {
-	private SegToken segToken;
+    private SegToken segToken;
 
-	/**
-	 * 构造
-	 * 
-	 * @param segToken {@link SegToken}
-	 */
-	public JiebaWord(SegToken segToken) {
-		this.segToken = segToken;
-	}
+    /**
+     * 构造
+     *
+     * @param segToken {@link SegToken}
+     */
+    public JiebaWord(SegToken segToken) {
+        this.segToken = segToken;
+    }
 
-	@Override
-	public String getText() {
-		return segToken.word;
-	}
-	
-	@Override
-	public int getStartOffset() {
-		return segToken.startOffset;
-	}
-	
-	@Override
-	public int getEndOffset() {
-		return segToken.endOffset;
-	}
+    @Override
+    public String getText() {
+        return segToken.word;
+    }
 
-	@Override
-	public String toString() {
-		return getText();
-	}
+    @Override
+    public int getStartOffset() {
+        return segToken.startOffset;
+    }
+
+    @Override
+    public int getEndOffset() {
+        return segToken.endOffset;
+    }
+
+    @Override
+    public String toString() {
+        return getText();
+    }
 }

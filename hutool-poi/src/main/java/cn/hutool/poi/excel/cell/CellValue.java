@@ -8,10 +8,10 @@ package cn.hutool.poi.excel.cell;
  * @since 4.0.11
  */
 public interface CellValue<T> {
-	/**
-	 * 获取单元格值
-	 * 
-	 * @return 值
-	 */
-	T getValue();
+    /**
+     * 获取单元格值
+     *
+     * @return 值
+     */
+    T getValue();
 }

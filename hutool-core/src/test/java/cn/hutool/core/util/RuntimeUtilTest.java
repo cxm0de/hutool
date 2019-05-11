@@ -13,17 +13,17 @@ import cn.hutool.core.util.RuntimeUtil;
  */
 public class RuntimeUtilTest {
 
-	@Test
-	@Ignore
-	public void execTest() {
-		String str = RuntimeUtil.execForStr("ipconfig");
-		Console.log(str);
-	}
+    @Test
+    @Ignore
+    public void execTest() {
+        String str = RuntimeUtil.execForStr("ipconfig");
+        Console.log(str);
+    }
 
-	@Test
-	@Ignore
-	public void execCmdTest() {
-		String str = RuntimeUtil.execForStr("cmd /c dir");
-		Console.log(str);
-	}
+    @Test
+    @Ignore
+    public void execCmdTest() {
+        String str = RuntimeUtil.execForStr("cmd /c dir");
+        Console.log(str);
+    }
 }

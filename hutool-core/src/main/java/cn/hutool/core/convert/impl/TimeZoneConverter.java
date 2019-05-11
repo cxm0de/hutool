@@ -11,9 +11,9 @@ import cn.hutool.core.convert.AbstractConverter;
  */
 public class TimeZoneConverter extends AbstractConverter<TimeZone>{
 
-	@Override
-	protected TimeZone convertInternal(Object value) {
-		return TimeZone.getTimeZone(convertToStr(value));
-	}
+    @Override
+    protected TimeZone convertInternal(Object value) {
+        return TimeZone.getTimeZone(convertToStr(value));
+    }
 
 }

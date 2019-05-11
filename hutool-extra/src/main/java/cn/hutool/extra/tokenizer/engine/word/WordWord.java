@@ -9,35 +9,35 @@ import cn.hutool.extra.tokenizer.Word;
  *
  */
 public class WordWord implements Word {
-	
-	private org.apdplat.word.segmentation.Word word;
 
-	/**
-	 * 构造
-	 * 
-	 * @param word {@link org.apdplat.word.segmentation.Word}
-	 */
-	public WordWord(org.apdplat.word.segmentation.Word word) {
-		this.word = word;
-	}
+    private org.apdplat.word.segmentation.Word word;
 
-	@Override
-	public String getText() {
-		return word.getText();
-	}
-	
-	@Override
-	public int getStartOffset() {
-		return -1;
-	}
-	
-	@Override
-	public int getEndOffset() {
-		return -1;
-	}
+    /**
+     * 构造
+     *
+     * @param word {@link org.apdplat.word.segmentation.Word}
+     */
+    public WordWord(org.apdplat.word.segmentation.Word word) {
+        this.word = word;
+    }
 
-	@Override
-	public String toString() {
-		return getText();
-	}
+    @Override
+    public String getText() {
+        return word.getText();
+    }
+
+    @Override
+    public int getStartOffset() {
+        return -1;
+    }
+
+    @Override
+    public int getEndOffset() {
+        return -1;
+    }
+
+    @Override
+    public String toString() {
+        return getText();
+    }
 }

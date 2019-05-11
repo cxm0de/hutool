@@ -9,10 +9,10 @@ package cn.hutool.json;
  */
 public interface JSONString {
 
-	/**
-	 * 自定义转JSON字符串的方法
-	 * 
-	 * @return JSON字符串
-	 */
-	public String toJSONString();
+    /**
+     * 自定义转JSON字符串的方法
+     *
+     * @return JSON字符串
+     */
+    public String toJSONString();
 }

@@ -15,22 +15,22 @@ import cn.hutool.core.io.IoUtil;
  *
  */
 public abstract class AbstractTemplate implements Template{
-	
-	@Override
-	public void render(Map<?, ?> bindingMap, File file) {
-		BufferedOutputStream out = null;
-		try {
-			out = FileUtil.getOutputStream(file);
-			this.render(bindingMap, out);
-		} finally {
-			IoUtil.close(out);
-		}
-	}
-	
-	@Override
-	public String render(Map<?, ?> bindingMap) {
-		final StringWriter writer = new StringWriter();
-		render(bindingMap, writer);
-		return writer.toString();
-	}
+
+    @Override
+    public void render(Map<?, ?> bindingMap, File file) {
+        BufferedOutputStream out = null;
+        try {
+            out = FileUtil.getOutputStream(file);
+            this.render(bindingMap, out);
+        } finally {
+            IoUtil.close(out);
+        }
+    }
+
+    @Override
+    public String render(Map<?, ?> bindingMap) {
+        final StringWriter writer = new StringWriter();
+        render(bindingMap, writer);
+        return writer.toString();
+    }
 }

@@ -9,12 +9,12 @@ import cn.hutool.db.sql.Wrapper;
  *
  */
 public class Sqlite3Dialect extends AnsiSqlDialect{
-	public Sqlite3Dialect() {
-		wrapper = new Wrapper('[', ']');
-	}
-	
-	@Override
-	public DialectName dialectName() {
-		return DialectName.SQLITE3;
-	}
+    public Sqlite3Dialect() {
+        wrapper = new Wrapper('[', ']');
+    }
+
+    @Override
+    public DialectName dialectName() {
+        return DialectName.SQLITE3;
+    }
 }

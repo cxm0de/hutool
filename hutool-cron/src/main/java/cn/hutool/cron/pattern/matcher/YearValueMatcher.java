@@ -9,15 +9,15 @@ import java.util.List;
  *
  */
 public class YearValueMatcher implements ValueMatcher{
-	
-	private List<Integer> valueList;
-	
-	public YearValueMatcher(List<Integer> intValueList) {
-		this.valueList = intValueList;
-	}
 
-	@Override
-	public boolean match(Integer t) {
-		return valueList.contains(t);
-	}
+    private List<Integer> valueList;
+
+    public YearValueMatcher(List<Integer> intValueList) {
+        this.valueList = intValueList;
+    }
+
+    @Override
+    public boolean match(Integer t) {
+        return valueList.contains(t);
+    }
 }

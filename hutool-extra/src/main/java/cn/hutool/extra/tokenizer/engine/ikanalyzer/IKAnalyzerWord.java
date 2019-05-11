@@ -11,35 +11,35 @@ import cn.hutool.extra.tokenizer.Word;
  *
  */
 public class IKAnalyzerWord implements Word {
-	
-	private Lexeme word;
 
-	/**
-	 * 构造
-	 * 
-	 * @param word {@link Lexeme}
-	 */
-	public IKAnalyzerWord(Lexeme word) {
-		this.word = word;
-	}
+    private Lexeme word;
 
-	@Override
-	public String getText() {
-		return word.getLexemeText();
-	}
-	
-	@Override
-	public int getStartOffset() {
-		return word.getBeginPosition();
-	}
-	
-	@Override
-	public int getEndOffset() {
-		return word.getEndPosition();
-	}
+    /**
+     * 构造
+     *
+     * @param word {@link Lexeme}
+     */
+    public IKAnalyzerWord(Lexeme word) {
+        this.word = word;
+    }
 
-	@Override
-	public String toString() {
-		return getText();
-	}
+    @Override
+    public String getText() {
+        return word.getLexemeText();
+    }
+
+    @Override
+    public int getStartOffset() {
+        return word.getBeginPosition();
+    }
+
+    @Override
+    public int getEndOffset() {
+        return word.getEndPosition();
+    }
+
+    @Override
+    public String toString() {
+        return getText();
+    }
 }

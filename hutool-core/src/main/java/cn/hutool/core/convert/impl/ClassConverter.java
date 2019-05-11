@@ -10,16 +10,16 @@ import cn.hutool.core.util.ClassUtil;
  *
  */
 public class ClassConverter extends AbstractConverter<Class<?>>{
-	
-	@Override
-	protected Class<?> convertInternal(Object value) {
-		String valueStr = convertToStr(value);
-		try {
-			return ClassUtil.getClassLoader().loadClass(valueStr);
-		} catch (Exception e) {
-			// Ignore Exception
-		}
-		return null;
-	}
+
+    @Override
+    protected Class<?> convertInternal(Object value) {
+        String valueStr = convertToStr(value);
+        try {
+            return ClassUtil.getClassLoader().loadClass(valueStr);
+        } catch (Exception e) {
+            // Ignore Exception
+        }
+        return null;
+    }
 
 }

@@ -12,31 +12,31 @@ package cn.hutool.core.lang.loader;
  */
 public abstract class LazyLoader<T> implements Loader<T> {
 
-	/** 被加载对象 */
-	private volatile T object;
+    /** 被加载对象 */
+    private volatile T object;
 
-	/**
-	 * 获取一个对象，第一次调用此方法时初始化对象然后返回，之后调用此方法直接返回原对象
-	 */
-	@Override
-	public T get() {
-		T result = object;
-		if (result == null) {
-			synchronized (this) {
-				result = object;
-				if (result == null) {
-					object = result = init();
-				}
-			}
-		}
-		return result;
-	}
+    /**
+     * 获取一个对象，第一次调用此方法时初始化对象然后返回，之后调用此方法直接返回原对象
+     */
+    @Override
+    public T get() {
+        T result = object;
+        if (result == null) {
+            synchronized (this) {
+                result = object;
+                if (result == null) {
+                    object = result = init();
+                }
+            }
+        }
+        return result;
+    }
 
-	/**
-	 * 初始化被加载的对象<br>
-	 * 如果对象从未被加载过，调用此方法初始化加载对象，此方法只被调用一次
-	 * 
-	 * @return 被加载的对象
-	 */
-	protected abstract T init();
+    /**
+     * 初始化被加载的对象<br>
+     * 如果对象从未被加载过，调用此方法初始化加载对象，此方法只被调用一次
+     *
+     * @return 被加载的对象
+     */
+    protected abstract T init();
 }

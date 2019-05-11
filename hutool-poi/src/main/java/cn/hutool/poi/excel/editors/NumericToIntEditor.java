@@ -11,12 +11,12 @@ import cn.hutool.poi.excel.cell.CellEditor;
  */
 public class NumericToIntEditor implements CellEditor{
 
-	@Override
-	public Object edit(Cell cell, Object value) {
-		if(value instanceof Number) {
-			return ((Number)value).intValue();
-		}
-		return value;
-	}
+    @Override
+    public Object edit(Cell cell, Object value) {
+        if(value instanceof Number) {
+            return ((Number)value).intValue();
+        }
+        return value;
+    }
 
 }

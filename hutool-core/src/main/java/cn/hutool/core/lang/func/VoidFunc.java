@@ -12,13 +12,13 @@ package cn.hutool.core.lang.func;
  * @since 3.1.0
  */
 public interface VoidFunc<P> {
-	
-	/**
-	 * 执行函数
-	 * 
-	 * @param parameters 参数列表
-	 * @throws Exception 自定义异常
-	 */
-	@SuppressWarnings("unchecked")
-	void call(P... parameters) throws Exception;
+
+    /**
+     * 执行函数
+     *
+     * @param parameters 参数列表
+     * @throws Exception 自定义异常
+     */
+    @SuppressWarnings("unchecked")
+    void call(P... parameters) throws Exception;
 }

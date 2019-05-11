@@ -9,13 +9,13 @@ import cn.hutool.core.util.StrUtil;
  */
 public class AlwaysTrueValueMatcher implements ValueMatcher{
 
-	@Override
-	public boolean match(Integer t) {
-		return true;
-	}
-	
-	@Override
-	public String toString() {
-		return StrUtil.format("[Matcher]: always true.");
-	}
+    @Override
+    public boolean match(Integer t) {
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return StrUtil.format("[Matcher]: always true.");
+    }
 }

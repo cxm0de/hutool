@@ -12,13 +12,13 @@ import net.sf.cglib.proxy.Enhancer;
  */
 public class CglibProxyFactory extends ProxyFactory{
 
-	@Override
-	@SuppressWarnings("unchecked")
-	public <T> T proxy(T target, Aspect aspect) {
-		final Enhancer enhancer = new Enhancer();
-		enhancer.setSuperclass(target.getClass());
-		enhancer.setCallback(new CglibInterceptor(target, aspect));
-		return (T) enhancer.create();
-	}
+    @Override
+    @SuppressWarnings("unchecked")
+    public <T> T proxy(T target, Aspect aspect) {
+        final Enhancer enhancer = new Enhancer();
+        enhancer.setSuperclass(target.getClass());
+        enhancer.setCallback(new CglibInterceptor(target, aspect));
+        return (T) enhancer.create();
+    }
 
 }

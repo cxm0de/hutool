@@ -12,13 +12,13 @@ import cn.hutool.core.io.FileUtil;
  */
 public class WebAppResource extends FileResource {
 
-	/**
-	 * 构造
-	 * 
-	 * @param path 相对于Web root的路径
-	 */
-	public WebAppResource(String path) {
-		super(new File(FileUtil.getWebRoot(), path));
-	}
+    /**
+     * 构造
+     *
+     * @param path 相对于Web root的路径
+     */
+    public WebAppResource(String path) {
+        super(new File(FileUtil.getWebRoot(), path));
+    }
 
 }

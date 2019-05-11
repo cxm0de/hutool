@@ -13,21 +13,21 @@ import cn.hutool.core.convert.AbstractConverter;
  */
 public class URIConverter extends AbstractConverter<URI>{
 
-	@Override
-	protected URI convertInternal(Object value) {
-		try {
-			if(value instanceof File){
-				return ((File)value).toURI();
-			}
-			
-			if(value instanceof URL){
-				return ((URL)value).toURI();
-			}
-			return new URI(convertToStr(value));
-		} catch (Exception e) {
-			// Ignore Exception
-		}
-		return null;
-	}
+    @Override
+    protected URI convertInternal(Object value) {
+        try {
+            if(value instanceof File){
+                return ((File)value).toURI();
+            }
+
+            if(value instanceof URL){
+                return ((URL)value).toURI();
+            }
+            return new URI(convertToStr(value));
+        } catch (Exception e) {
+            // Ignore Exception
+        }
+        return null;
+    }
 
 }

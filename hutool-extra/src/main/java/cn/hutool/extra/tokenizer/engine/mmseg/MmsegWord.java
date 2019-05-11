@@ -9,35 +9,35 @@ import cn.hutool.extra.tokenizer.Word;
  *
  */
 public class MmsegWord implements Word {
-	
-	private com.chenlb.mmseg4j.Word word;
 
-	/**
-	 * 构造
-	 * 
-	 * @param word {@link com.chenlb.mmseg4j.Word}
-	 */
-	public MmsegWord(com.chenlb.mmseg4j.Word word) {
-		this.word = word;
-	}
+    private com.chenlb.mmseg4j.Word word;
 
-	@Override
-	public String getText() {
-		return word.getString();
-	}
-	
-	@Override
-	public int getStartOffset() {
-		return this.word.getStartOffset();
-	}
-	
-	@Override
-	public int getEndOffset() {
-		return this.word.getEndOffset();
-	}
+    /**
+     * 构造
+     *
+     * @param word {@link com.chenlb.mmseg4j.Word}
+     */
+    public MmsegWord(com.chenlb.mmseg4j.Word word) {
+        this.word = word;
+    }
 
-	@Override
-	public String toString() {
-		return getText();
-	}
+    @Override
+    public String getText() {
+        return word.getString();
+    }
+
+    @Override
+    public int getStartOffset() {
+        return this.word.getStartOffset();
+    }
+
+    @Override
+    public int getEndOffset() {
+        return this.word.getEndOffset();
+    }
+
+    @Override
+    public String toString() {
+        return getText();
+    }
 }

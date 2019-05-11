@@ -13,30 +13,30 @@ import cn.hutool.setting.Setting;
  */
 public class PooledDSFactory extends AbstractDSFactory {
 
-	public static final String DS_NAME = "Hutool-Pooled-DataSource";
+    public static final String DS_NAME = "Hutool-Pooled-DataSource";
 
-	public PooledDSFactory() {
-		this(null);
-	}
+    public PooledDSFactory() {
+        this(null);
+    }
 
-	public PooledDSFactory(Setting setting) {
-		super(DS_NAME, PooledDataSource.class, setting);
-	}
+    public PooledDSFactory(Setting setting) {
+        super(DS_NAME, PooledDataSource.class, setting);
+    }
 
-	@Override
-	protected DataSource createDataSource(String jdbcUrl, String driver, String user, String pass, Setting poolSetting) {
-		final DbConfig dbConfig = new DbConfig();
-		dbConfig.setUrl(jdbcUrl);
-		dbConfig.setDriver(driver);
-		dbConfig.setUser(user);
-		dbConfig.setPass(pass);
+    @Override
+    protected DataSource createDataSource(String jdbcUrl, String driver, String user, String pass, Setting poolSetting) {
+        final DbConfig dbConfig = new DbConfig();
+        dbConfig.setUrl(jdbcUrl);
+        dbConfig.setDriver(driver);
+        dbConfig.setUser(user);
+        dbConfig.setPass(pass);
 
-		// 连接池相关信息
-		dbConfig.setInitialSize(poolSetting.getInt("initialSize", 0));
-		dbConfig.setMinIdle(poolSetting.getInt("minIdle", 0));
-		dbConfig.setMaxActive(poolSetting.getInt("maxActive", 8));
-		dbConfig.setMaxWait(poolSetting.getLong("maxWait", 6000L));
+        // 连接池相关信息
+        dbConfig.setInitialSize(poolSetting.getInt("initialSize", 0));
+        dbConfig.setMinIdle(poolSetting.getInt("minIdle", 0));
+        dbConfig.setMaxActive(poolSetting.getInt("maxActive", 8));
+        dbConfig.setMaxWait(poolSetting.getLong("maxWait", 6000L));
 
-		return new PooledDataSource(dbConfig);
-	}
+        return new PooledDataSource(dbConfig);
+    }
 }

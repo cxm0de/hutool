@@ -11,34 +11,34 @@ import cn.hutool.extra.tokenizer.Word;
  *
  */
 public class JcsegWord implements Word {
-	private IWord word;
+    private IWord word;
 
-	/**
-	 * 构造
-	 * 
-	 * @param word {@link IWord}
-	 */
-	public JcsegWord(IWord word) {
-		this.word = word;
-	}
+    /**
+     * 构造
+     *
+     * @param word {@link IWord}
+     */
+    public JcsegWord(IWord word) {
+        this.word = word;
+    }
 
-	@Override
-	public String getText() {
-		return word.getValue();
-	}
-	
-	@Override
-	public int getStartOffset() {
-		return word.getPosition();
-	}
-	
-	@Override
-	public int getEndOffset() {
-		return getStartOffset() + word.getLength();
-	}
+    @Override
+    public String getText() {
+        return word.getValue();
+    }
 
-	@Override
-	public String toString() {
-		return getText();
-	}
+    @Override
+    public int getStartOffset() {
+        return word.getPosition();
+    }
+
+    @Override
+    public int getEndOffset() {
+        return getStartOffset() + word.getLength();
+    }
+
+    @Override
+    public String toString() {
+        return getText();
+    }
 }

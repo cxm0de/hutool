@@ -17,78 +17,78 @@ import java.util.concurrent.TimeUnit;
  * @author lry,looly
  */
 public class SystemClock {
-	
-	/** 时钟更新间隔，单位毫秒 */
-	private final long period;
-	/** 现在时刻的毫秒数 */
-	private volatile long now;
 
-	/**
-	 * 构造
-	 * @param period
-	 */
-	private SystemClock(long period) {
-		this.period = period;
-		this.now = System.currentTimeMillis();
-		scheduleClockUpdating();
-	}
+    /** 时钟更新间隔，单位毫秒 */
+    private final long period;
+    /** 现在时刻的毫秒数 */
+    private volatile long now;
 
-	/**
-	 * 开启计时器线程
-	 */
-	private void scheduleClockUpdating() {
-		ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor(new ThreadFactory(){
-			@Override
-			public Thread newThread(Runnable runnable) {
-				Thread thread = new Thread(runnable, "System Clock");
-				thread.setDaemon(true);
-				return thread;
-			}
-		});
-		scheduler.scheduleAtFixedRate(new Runnable(){
-			@Override
-			public void run() {
-				now = System.currentTimeMillis();
-			}
-		}, period, period, TimeUnit.MILLISECONDS);
-	}
+    /**
+     * 构造
+     * @param period
+     */
+    private SystemClock(long period) {
+        this.period = period;
+        this.now = System.currentTimeMillis();
+        scheduleClockUpdating();
+    }
 
-	/**
-	 * @return 当前时间毫秒数
-	 */
-	private long currentTimeMillis() {
-		return now;
-	}
-	
-	//------------------------------------------------------------------------ static
-	/**
-	 * 单例
-	 * @author Looly
-	 *
-	 */
-	private static class InstanceHolder {
-		public static final SystemClock INSTANCE = new SystemClock(1);
-	}
+    /**
+     * 开启计时器线程
+     */
+    private void scheduleClockUpdating() {
+        ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor(new ThreadFactory(){
+            @Override
+            public Thread newThread(Runnable runnable) {
+                Thread thread = new Thread(runnable, "System Clock");
+                thread.setDaemon(true);
+                return thread;
+            }
+        });
+        scheduler.scheduleAtFixedRate(new Runnable(){
+            @Override
+            public void run() {
+                now = System.currentTimeMillis();
+            }
+        }, period, period, TimeUnit.MILLISECONDS);
+    }
 
-	/**
-	 * 单例实例
-	 * @return 单例实例
-	 */
-	private static SystemClock instance() {
-		return InstanceHolder.INSTANCE;
-	}
+    /**
+     * @return 当前时间毫秒数
+     */
+    private long currentTimeMillis() {
+        return now;
+    }
 
-	/**
-	 * @return 当前时间
-	 */
-	public static long now() {
-		return instance().currentTimeMillis();
-	}
+    //------------------------------------------------------------------------ static
+    /**
+     * 单例
+     * @author Looly
+     *
+     */
+    private static class InstanceHolder {
+        public static final SystemClock INSTANCE = new SystemClock(1);
+    }
 
-	/**
-	 * @return 当前时间字符串表现形式
-	 */
-	public static String nowDate() {
-		return new Timestamp(instance().currentTimeMillis()).toString();
-	}
+    /**
+     * 单例实例
+     * @return 单例实例
+     */
+    private static SystemClock instance() {
+        return InstanceHolder.INSTANCE;
+    }
+
+    /**
+     * @return 当前时间
+     */
+    public static long now() {
+        return instance().currentTimeMillis();
+    }
+
+    /**
+     * @return 当前时间字符串表现形式
+     */
+    public static String nowDate() {
+        return new Timestamp(instance().currentTimeMillis()).toString();
+    }
 }

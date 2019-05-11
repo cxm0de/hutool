@@ -12,10 +12,10 @@ package cn.hutool.core.lang.func;
  */
 public interface VoidFunc0 {
 
-	/**
-	 * 执行函数
-	 * 
-	 * @throws Exception 自定义异常
-	 */
-	void call() throws Exception;
+    /**
+     * 执行函数
+     *
+     * @throws Exception 自定义异常
+     */
+    void call() throws Exception;
 }

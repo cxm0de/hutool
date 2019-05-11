@@ -12,18 +12,18 @@ import java.util.Locale;
  */
 public class PinyinComparator implements Comparator<String> {
 
-	final Collator collator;
+    final Collator collator;
 
-	/**
-	 * 构造
-	 */
-	public PinyinComparator() {
-		collator = Collator.getInstance(Locale.CHINESE);
-	}
+    /**
+     * 构造
+     */
+    public PinyinComparator() {
+        collator = Collator.getInstance(Locale.CHINESE);
+    }
 
-	@Override
-	public int compare(String o1, String o2) {
-		return collator.compare(o1, o2);
-	}
+    @Override
+    public int compare(String o1, String o2) {
+        return collator.compare(o1, o2);
+    }
 
 }

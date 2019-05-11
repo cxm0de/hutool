@@ -18,53 +18,53 @@ import cn.hutool.core.map.FixedLinkedHashMap;
  */
 public class LRUCache<K, V> extends AbstractCache<K, V> {
 
-	/**
-	 * 构造<br>
-	 * 默认无超时
-	 * @param capacity 容量
-	 */
-	public LRUCache(int capacity) {
-		this(capacity, 0);
-	}
+    /**
+     * 构造<br>
+     * 默认无超时
+     * @param capacity 容量
+     */
+    public LRUCache(int capacity) {
+        this(capacity, 0);
+    }
 
-	/**
-	 * 构造
-	 * @param capacity 容量
-	 * @param timeout 默认超时时间，单位：毫秒
-	 */
-	public LRUCache(int capacity, long timeout) {
-		if(Integer.MAX_VALUE == capacity) {
-			capacity -= 1;
-		}
-		
-		this.capacity = capacity;
-		this.timeout = timeout;
-		
-		//链表key按照访问顺序排序，调用get方法后，会将这次访问的元素移至头部
-		cacheMap = new FixedLinkedHashMap<K, CacheObj<K, V>>(capacity);
-	}
+    /**
+     * 构造
+     * @param capacity 容量
+     * @param timeout 默认超时时间，单位：毫秒
+     */
+    public LRUCache(int capacity, long timeout) {
+        if(Integer.MAX_VALUE == capacity) {
+            capacity -= 1;
+        }
 
-	// ---------------------------------------------------------------- prune
+        this.capacity = capacity;
+        this.timeout = timeout;
 
-	/**
-	 * 只清理超时对象，LRU的实现会交给<code>LinkedHashMap</code>
-	 */
-	@Override
-	protected int pruneCache() {
-		if (isPruneExpiredActive() == false) {
-			return 0;
-		}
-		int count = 0;
-		Iterator<CacheObj<K, V>> values = cacheMap.values().iterator();
-		CacheObj<K, V> co;
-		while (values.hasNext()) {
-			co = values.next();
-			if (co.isExpired()) {
-				values.remove();
-				onRemove(co.key, co.obj);
-				count++;
-			}
-		}
-		return count;
-	}
+        //链表key按照访问顺序排序，调用get方法后，会将这次访问的元素移至头部
+        cacheMap = new FixedLinkedHashMap<K, CacheObj<K, V>>(capacity);
+    }
+
+    // ---------------------------------------------------------------- prune
+
+    /**
+     * 只清理超时对象，LRU的实现会交给<code>LinkedHashMap</code>
+     */
+    @Override
+    protected int pruneCache() {
+        if (isPruneExpiredActive() == false) {
+            return 0;
+        }
+        int count = 0;
+        Iterator<CacheObj<K, V>> values = cacheMap.values().iterator();
+        CacheObj<K, V> co;
+        while (values.hasNext()) {
+            co = values.next();
+            if (co.isExpired()) {
+                values.remove();
+                onRemove(co.key, co.obj);
+                count++;
+            }
+        }
+        return count;
+    }
 }

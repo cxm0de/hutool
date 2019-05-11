@@ -11,26 +11,26 @@ import cn.hutool.core.util.StrUtil;
  *
  */
 public class BoolArrayValueMatcher implements ValueMatcher{
-	
-	boolean[] bValues;
-	
-	public BoolArrayValueMatcher(List<Integer> intValueList) {
-		bValues = new boolean[Collections.max(intValueList) + 1];
-		for (Integer value : intValueList) {
-			bValues[value] = true;
-		}
-	}
 
-	@Override
-	public boolean match(Integer value) {
-		if(null == value || value >= bValues.length){
-			return false;
-		}
-		return bValues[value];
-	}
-	
-	@Override
-	public String toString() {
-		return StrUtil.format("Matcher:{}", (Object)this.bValues);
-	}
+    boolean[] bValues;
+
+    public BoolArrayValueMatcher(List<Integer> intValueList) {
+        bValues = new boolean[Collections.max(intValueList) + 1];
+        for (Integer value : intValueList) {
+            bValues[value] = true;
+        }
+    }
+
+    @Override
+    public boolean match(Integer value) {
+        if(null == value || value >= bValues.length){
+            return false;
+        }
+        return bValues[value];
+    }
+
+    @Override
+    public String toString() {
+        return StrUtil.format("Matcher:{}", (Object)this.bValues);
+    }
 }

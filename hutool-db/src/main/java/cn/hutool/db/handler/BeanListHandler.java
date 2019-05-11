@@ -14,29 +14,29 @@ import java.util.List;
  */
 public class BeanListHandler<E> implements RsHandler<List<E>> {
 
-	private Class<E> elementBeanType;
+    private Class<E> elementBeanType;
 
-	/**
-	 * 创建一个 BeanListHandler对象
-	 * 
-	 * @param <E> 处理对象类型
-	 * @param beanType Bean类型
-	 * @return BeanListHandler对象
-	 */
-	public static <E> BeanListHandler<E> create(Class<E> beanType) {
-		return new BeanListHandler<E>(beanType);
-	}
+    /**
+     * 创建一个 BeanListHandler对象
+     *
+     * @param <E> 处理对象类型
+     * @param beanType Bean类型
+     * @return BeanListHandler对象
+     */
+    public static <E> BeanListHandler<E> create(Class<E> beanType) {
+        return new BeanListHandler<E>(beanType);
+    }
 
-	/**
-	 * 构造
-	 * @param beanType Bean类型
-	 */
-	public BeanListHandler(Class<E> beanType) {
-		this.elementBeanType = beanType;
-	}
+    /**
+     * 构造
+     * @param beanType Bean类型
+     */
+    public BeanListHandler(Class<E> beanType) {
+        this.elementBeanType = beanType;
+    }
 
-	@Override
-	public List<E> handle(ResultSet rs) throws SQLException {
-		return HandleHelper.handleRsToBeanList(rs, new ArrayList<E>(), elementBeanType);
-	}
+    @Override
+    public List<E> handle(ResultSet rs) throws SQLException {
+        return HandleHelper.handleRsToBeanList(rs, new ArrayList<E>(), elementBeanType);
+    }
 }

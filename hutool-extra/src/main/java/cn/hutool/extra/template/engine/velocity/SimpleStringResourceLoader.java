@@ -21,34 +21,34 @@ import cn.hutool.core.util.CharsetUtil;
  */
 public class SimpleStringResourceLoader extends ResourceLoader {
 
-	@Override
-	public void init(ExtProperties configuration) {
-	}
+    @Override
+    public void init(ExtProperties configuration) {
+    }
 
-	/**
-	 * 获取资源流
-	 * 
-	 * @param source 字符串模板
-	 * @return 流
-	 * @throws ResourceNotFoundException 资源未找到
-	 */
-	public InputStream getResourceStream(String source) throws ResourceNotFoundException {
-		return IoUtil.toStream(source, CharsetUtil.CHARSET_UTF_8);
-	}
-	
-	@Override
-	public Reader getResourceReader(String source, String encoding) throws ResourceNotFoundException {
-		return new StringReader(source);
-	}
+    /**
+     * 获取资源流
+     *
+     * @param source 字符串模板
+     * @return 流
+     * @throws ResourceNotFoundException 资源未找到
+     */
+    public InputStream getResourceStream(String source) throws ResourceNotFoundException {
+        return IoUtil.toStream(source, CharsetUtil.CHARSET_UTF_8);
+    }
 
-	@Override
-	public boolean isSourceModified(Resource resource) {
-		return false;
-	}
+    @Override
+    public Reader getResourceReader(String source, String encoding) throws ResourceNotFoundException {
+        return new StringReader(source);
+    }
 
-	@Override
-	public long getLastModified(Resource resource) {
-		return 0;
-	}
+    @Override
+    public boolean isSourceModified(Resource resource) {
+        return false;
+    }
+
+    @Override
+    public long getLastModified(Resource resource) {
+        return 0;
+    }
 
 }

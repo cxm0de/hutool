@@ -19,27 +19,27 @@ import cn.hutool.extra.tokenizer.TokenizerException;
  */
 public class AnalysisEngine implements TokenizerEngine {
 
-	private Analyzer analyzer;
-	
-	/**
-	 * 构造
-	 * 
-	 * @param analyzer 分析器{@link Analyzer}
-	 */
-	public AnalysisEngine(Analyzer analyzer) {
-		this.analyzer = analyzer;
-	}
+    private Analyzer analyzer;
 
-	@Override
-	public Result parse(CharSequence text) {
-		TokenStream stream;
-		try {
-			stream = analyzer.tokenStream("text", StrUtil.str(text));
-			stream.reset();
-		} catch (IOException e) {
-			throw new TokenizerException(e);
-		}
-		return new AnalysisResult(stream);
-	}
+    /**
+     * 构造
+     *
+     * @param analyzer 分析器{@link Analyzer}
+     */
+    public AnalysisEngine(Analyzer analyzer) {
+        this.analyzer = analyzer;
+    }
+
+    @Override
+    public Result parse(CharSequence text) {
+        TokenStream stream;
+        try {
+            stream = analyzer.tokenStream("text", StrUtil.str(text));
+            stream.reset();
+        } catch (IOException e) {
+            throw new TokenizerException(e);
+        }
+        return new AnalysisResult(stream);
+    }
 
 }

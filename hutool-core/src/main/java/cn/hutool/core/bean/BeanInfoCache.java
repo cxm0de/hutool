@@ -12,28 +12,28 @@ import cn.hutool.core.lang.SimpleCache;
  *
  */
 public enum BeanInfoCache {
-	INSTANCE;
-	
-	private SimpleCache<Class<?>, Map<String, PropertyDescriptor>> pdCache = new SimpleCache<>();
-	private SimpleCache<Class<?>, Map<String, PropertyDescriptor>> ignoreCasePdCache = new SimpleCache<>();
-	
-	/**
-	 * 获得属性名和{@link PropertyDescriptor}Map映射
-	 * @param beanClass Bean的类
-	 * @param ignoreCase 是否忽略大小写
-	 * @return 属性名和{@link PropertyDescriptor}Map映射
-	 */
-	public Map<String, PropertyDescriptor> getPropertyDescriptorMap(Class<?> beanClass, boolean ignoreCase){
-		return (ignoreCase ? ignoreCasePdCache : pdCache).get(beanClass);
-	}
-	
-	/**
-	 * 加入缓存
-	 * @param beanClass Bean的类
-	 * @param fieldNamePropertyDescriptorMap 属性名和{@link PropertyDescriptor}Map映射
-	 * @param ignoreCase 是否忽略大小写
-	 */
-	public void putPropertyDescriptorMap(Class<?> beanClass, Map<String, PropertyDescriptor> fieldNamePropertyDescriptorMap, boolean ignoreCase){
-		(ignoreCase ? ignoreCasePdCache : pdCache).put(beanClass, fieldNamePropertyDescriptorMap);
-	}
+    INSTANCE;
+
+    private SimpleCache<Class<?>, Map<String, PropertyDescriptor>> pdCache = new SimpleCache<>();
+    private SimpleCache<Class<?>, Map<String, PropertyDescriptor>> ignoreCasePdCache = new SimpleCache<>();
+
+    /**
+     * 获得属性名和{@link PropertyDescriptor}Map映射
+     * @param beanClass Bean的类
+     * @param ignoreCase 是否忽略大小写
+     * @return 属性名和{@link PropertyDescriptor}Map映射
+     */
+    public Map<String, PropertyDescriptor> getPropertyDescriptorMap(Class<?> beanClass, boolean ignoreCase){
+        return (ignoreCase ? ignoreCasePdCache : pdCache).get(beanClass);
+    }
+
+    /**
+     * 加入缓存
+     * @param beanClass Bean的类
+     * @param fieldNamePropertyDescriptorMap 属性名和{@link PropertyDescriptor}Map映射
+     * @param ignoreCase 是否忽略大小写
+     */
+    public void putPropertyDescriptorMap(Class<?> beanClass, Map<String, PropertyDescriptor> fieldNamePropertyDescriptorMap, boolean ignoreCase){
+        (ignoreCase ? ignoreCasePdCache : pdCache).put(beanClass, fieldNamePropertyDescriptorMap);
+    }
 }

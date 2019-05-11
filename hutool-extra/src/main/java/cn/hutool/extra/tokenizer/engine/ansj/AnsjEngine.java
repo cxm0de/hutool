@@ -16,27 +16,27 @@ import cn.hutool.extra.tokenizer.Result;
  */
 public class AnsjEngine implements TokenizerEngine {
 
-	private Analysis analysis;
-	
-	/**
-	 * 构造
-	 */
-	public AnsjEngine() {
-		this(new ToAnalysis());
-	}
-	
-	/**
-	 * 构造
-	 * 
-	 * @param analysis {@link Analysis}
-	 */
-	public AnsjEngine(Analysis analysis) {
-		this.analysis = analysis;
-	}
+    private Analysis analysis;
 
-	@Override
-	public Result parse(CharSequence text) {
-		return new AnsjResult(analysis.parseStr(StrUtil.str(text)));
-	}
+    /**
+     * 构造
+     */
+    public AnsjEngine() {
+        this(new ToAnalysis());
+    }
+
+    /**
+     * 构造
+     *
+     * @param analysis {@link Analysis}
+     */
+    public AnsjEngine(Analysis analysis) {
+        this.analysis = analysis;
+    }
+
+    @Override
+    public Result parse(CharSequence text) {
+        return new AnsjResult(analysis.parseStr(StrUtil.str(text)));
+    }
 
 }

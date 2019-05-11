@@ -30,9 +30,9 @@ package cn.hutool;
  *
  */
 public class Hutool {
-	
-	public static final String AUTHOR = "Looly";
-	
-	private Hutool() {
-	}
+
+    public static final String AUTHOR = "Looly";
+
+    private Hutool() {
+    }
 }

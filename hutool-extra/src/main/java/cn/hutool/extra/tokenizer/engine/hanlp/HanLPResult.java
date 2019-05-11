@@ -16,32 +16,32 @@ import cn.hutool.extra.tokenizer.Word;
  *
  */
 public class HanLPResult implements Result {
-	
-	Iterator<Term> result;
-	
-	public HanLPResult(List<Term> termList) {
-		this.result = termList.iterator();
-	}
 
-	@Override
-	public boolean hasNext() {
-		return result.hasNext();
-	}
+    Iterator<Term> result;
 
-	@Override
-	public Word next() {
-		return new HanLPWord(result.next());
-	}
+    public HanLPResult(List<Term> termList) {
+        this.result = termList.iterator();
+    }
 
-	@Override
-	public void remove() {
-		result.remove();
-	}
+    @Override
+    public boolean hasNext() {
+        return result.hasNext();
+    }
 
-	@Override
-	public Iterator<Word> iterator() {
-		return this;
-	}
+    @Override
+    public Word next() {
+        return new HanLPWord(result.next());
+    }
 
-	
+    @Override
+    public void remove() {
+        result.remove();
+    }
+
+    @Override
+    public Iterator<Word> iterator() {
+        return this;
+    }
+
+
 }

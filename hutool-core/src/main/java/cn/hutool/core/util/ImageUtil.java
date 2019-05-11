@@ -13,5 +13,5 @@ import cn.hutool.core.img.ImgUtil;
 @Deprecated
 public class ImageUtil extends ImgUtil{
 
-	
+
 }

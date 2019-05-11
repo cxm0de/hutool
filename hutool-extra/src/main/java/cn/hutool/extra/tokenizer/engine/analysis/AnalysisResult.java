@@ -18,26 +18,26 @@ import cn.hutool.extra.tokenizer.Word;
  */
 public class AnalysisResult extends AbstractResult {
 
-	private TokenStream stream;
+    private TokenStream stream;
 
-	/**
-	 * 构造
-	 * 
-	 * @param stream 分词结果
-	 */
-	public AnalysisResult(TokenStream stream) {
-		this.stream = stream;
-	}
+    /**
+     * 构造
+     *
+     * @param stream 分词结果
+     */
+    public AnalysisResult(TokenStream stream) {
+        this.stream = stream;
+    }
 
-	@Override
-	protected Word nextWord() {
-		try {
-			if(this.stream.incrementToken()) {
-				return new AnalysisWord(this.stream.getAttribute(CharTermAttribute.class));
-			}
-		} catch (IOException e) {
-			throw new TokenizerException(e);
-		}
-		return null;
-	}
+    @Override
+    protected Word nextWord() {
+        try {
+            if(this.stream.incrementToken()) {
+                return new AnalysisWord(this.stream.getAttribute(CharTermAttribute.class));
+            }
+        } catch (IOException e) {
+            throw new TokenizerException(e);
+        }
+        return null;
+    }
 }

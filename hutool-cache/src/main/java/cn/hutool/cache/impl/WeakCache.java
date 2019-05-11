@@ -16,8 +16,8 @@ import java.util.WeakHashMap;
  */
 public class WeakCache<K, V> extends TimedCache<K, V>{
 
-	public WeakCache(long timeout) {
-		super(timeout, new WeakHashMap<K, CacheObj<K, V>>());
-	}
+    public WeakCache(long timeout) {
+        super(timeout, new WeakHashMap<K, CacheObj<K, V>>());
+    }
 
 }

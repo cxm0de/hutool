@@ -52,7 +52,7 @@ import cn.hutool.core.util.ArrayUtil;
  */
 public class CompareToBuilder implements Builder<Integer> {
     
-	/** 当前比较状态 */
+    /** 当前比较状态 */
     private int comparison;
 
     /**
