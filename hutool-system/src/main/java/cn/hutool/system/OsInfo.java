@@ -3,7 +3,7 @@ package cn.hutool.system;
 /**
  * 代表当前OS的信息。
  */
-public class OsInfo{
+public class OsInfo {
 
     private final String OS_VERSION = SystemUtil.get("os.version", false);
     private final String OS_ARCH = SystemUtil.get("os.arch", false);
@@ -43,7 +43,6 @@ public class OsInfo{
      * </p>
      *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
      * @since Java 1.1
      */
     public final String getArch() {
@@ -58,7 +57,6 @@ public class OsInfo{
      * </p>
      *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
      * @since Java 1.1
      */
     public final String getName() {
@@ -73,7 +71,6 @@ public class OsInfo{
      * </p>
      *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
      * @since Java 1.1
      */
     public final String getVersion() {
@@ -344,7 +341,6 @@ public class OsInfo{
      * 匹配OS名称。
      *
      * @param osNamePrefix OS名称前缀
-     *
      * @return 如果匹配，则返回<code>true</code>
      */
     private final boolean getOSMatches(String osNamePrefix) {
@@ -358,9 +354,8 @@ public class OsInfo{
     /**
      * 匹配OS名称。
      *
-     * @param osNamePrefix OS名称前缀
+     * @param osNamePrefix    OS名称前缀
      * @param osVersionPrefix OS版本前缀
-     *
      * @return 如果匹配，则返回<code>true</code>
      */
     private final boolean getOSMatches(String osNamePrefix, String osVersionPrefix) {
@@ -379,7 +374,6 @@ public class OsInfo{
      * </p>
      *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
      * @since Java 1.1
      */
     public final String getFileSeparator() {
@@ -394,7 +388,6 @@ public class OsInfo{
      * </p>
      *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
      * @since Java 1.1
      */
     public final String getLineSeparator() {
@@ -409,7 +402,6 @@ public class OsInfo{
      * </p>
      *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
      * @since Java 1.1
      */
     public final String getPathSeparator() {

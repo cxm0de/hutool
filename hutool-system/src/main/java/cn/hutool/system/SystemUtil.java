@@ -22,9 +22,8 @@ import cn.hutool.core.util.StrUtil;
 /**
  * Java的System类封装工具类。<br>
  * http://blog.csdn.net/zhongweijian/article/details/7619383
- * 
- * @author Looly
  *
+ * @author Looly
  */
 public class SystemUtil {
 
@@ -99,7 +98,7 @@ public class SystemUtil {
     /**
      * 取得系统属性，如果因为Java安全的限制而失败，则将错误打在Log中，然后返回 <code>null</code>。
      *
-     * @param name 属性名
+     * @param name         属性名
      * @param defaultValue 默认值
      * @return 属性值或<code>null</code>
      */
@@ -110,9 +109,8 @@ public class SystemUtil {
     /**
      * 取得系统属性，如果因为Java安全的限制而失败，则将错误打在Log中，然后返回 <code>null</code>。
      *
-     * @param name 属性名
+     * @param name  属性名
      * @param quiet 安静模式，不将出错信息打在<code>System.err</code>中
-     *
      * @return 属性值或<code>null</code>
      */
     public static String get(String name, boolean quiet) {
@@ -139,7 +137,7 @@ public class SystemUtil {
     /**
      * 获得boolean类型值
      *
-     * @param key 键
+     * @param key          键
      * @param defaultValue 默认值
      * @return 值
      */
@@ -168,7 +166,7 @@ public class SystemUtil {
     /**
      * 获得int类型值
      *
-     * @param key 键
+     * @param key          键
      * @param defaultValue 默认值
      * @return 值
      */
@@ -179,7 +177,7 @@ public class SystemUtil {
     /**
      * 获得long类型值
      *
-     * @param key 键
+     * @param key          键
      * @param defaultValue 默认值
      * @return 值
      */
@@ -270,7 +268,6 @@ public class SystemUtil {
      * The Java virtual machine can have one or more memory pools. It may add or remove memory pools during execution.
      *
      * @return a list of <tt>MemoryPoolMXBean</tt> objects.
-     *
      */
     public static List<MemoryPoolMXBean> getMemoryPoolMXBeans() {
         return ManagementFactory.getMemoryPoolMXBeans();
@@ -281,7 +278,6 @@ public class SystemUtil {
      * The Java virtual machine can have one or more memory managers. It may add or remove memory managers during execution.
      *
      * @return a list of <tt>MemoryManagerMXBean</tt> objects.
-     *
      */
     public static List<MemoryManagerMXBean> getMemoryManagerMXBeans() {
         return ManagementFactory.getMemoryManagerMXBeans();
@@ -293,7 +289,6 @@ public class SystemUtil {
      * It may add or remove <tt>GarbageCollectorMXBean</tt> during execution.
      *
      * @return a list of <tt>GarbageCollectorMXBean</tt> objects.
-     *
      */
     public static List<GarbageCollectorMXBean> getGarbageCollectorMXBeans() {
         return ManagementFactory.getGarbageCollectorMXBeans();
@@ -381,7 +376,7 @@ public class SystemUtil {
     }
 
     /**
-     * 获取内存总大小
+     * 获取JVM中内存总大小
      *
      * @return 内存总大小
      * @since 4.5.4
@@ -391,7 +386,7 @@ public class SystemUtil {
     }
 
     /**
-     * 获取内存剩余大小
+     * 获取JVM中内存剩余大小
      *
      * @return 内存剩余大小
      * @since 4.5.4
@@ -417,13 +412,14 @@ public class SystemUtil {
      */
     public static int getTotalThreadCount() {
         ThreadGroup parentThread = Thread.currentThread().getThreadGroup();
-        while(null != parentThread.getParent()) {
+        while (null != parentThread.getParent()) {
             parentThread = parentThread.getParent();
         }
         return parentThread.activeCount();
     }
 
     // ------------------------------------------------------------------ Dump
+
     /**
      * 将系统信息输出到<code>System.out</code>中。
      */
@@ -464,7 +460,7 @@ public class SystemUtil {
      *
      * @param builder <code>StringBuilder</code>对象
      * @param caption 标题
-     * @param value 值
+     * @param value   值
      */
     protected static void append(StringBuilder builder, String caption, Object value) {
         builder.append(caption).append(StrUtil.nullToDefault(Convert.toStr(value), "[n/a]")).append("\n");

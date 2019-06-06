@@ -12,7 +12,7 @@ import cn.hutool.core.text.ASCIIStrCache;
 public class CharUtil {
 
     public static final char SPACE = ' ';
-    public static final char TAB = '    ';
+    public static final char TAB = '\t';
     public static final char DOT = '.';
     public static final char SLASH = '/';
     public static final char BACKSLASH = '\\';

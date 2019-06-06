@@ -20,13 +20,13 @@ help(){
 case "$1" in
   'install')
     bin/install.sh
-    ;;
+	;;
   'doc')
     bin/javadoc.sh
-    ;;
+	;;
   'pack')
     bin/package.sh
-    ;;
+	;;
   *)
     help
 esac

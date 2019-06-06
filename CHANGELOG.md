@@ -3,6 +3,35 @@
 
 -------------------------------------------------------------------------------------------------------------
 
+## 4.5.11
+
+### 新特性
+* 【core】           Convert增加convertQuietly方法（issue#364@Github）
+* 【core】           DateUtil.parse方法识别时间增强（issue#IWMM6@Gitee）
+* 【extra】           Mail中Files附件可选为空（issue#365@Github）
+* 【extra】           EmojiUtil增加containsEmoji方法（pr#373@Github）
+* 【core】            Convert.toDBC()增加空校验（issue#369@Github）
+
+### Bug修复
+* 【core】           修复NumberUtil.decimalFormatMoney只有整数的bug（issue#IWKVL@Gitee）
+* 【bloomFilter】 修复BitMapBloomFilter构造数bug（issue#IWMIN@Gitee）
+* 【extra】           MailUtil.send方法传入自定义Setting失效问题（感谢@【上海】康）
+* 【core】           修复NetUtil.localIpv4s方法名，改为localIps（issue#IWS2C@Gitee）
+
+-------------------------------------------------------------------------------------------------------------
+
+## 4.5.10
+
+### 新特性
+* 【extra】         修改MailUtil中的逻辑，默认为非单例邮件客户端（issue#IWFRQ@Gitee）
+
+### Bug修复
+* 【http】          修复HttpUtil.toParams方法某些符号未转义问题（issue#356@Github）
+* 【captcha】    修复验证码被遮挡问题（issue#IWERW@Gitee）
+* 【poi】           修复readBySax重复问题（issue#IVKLQ@Gitee）
+
+-------------------------------------------------------------------------------------------------------------
+
 ## 4.5.9
 
 ### 新特性

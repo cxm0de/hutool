@@ -6,7 +6,7 @@ import java.net.UnknownHostException;
 /**
  * 代表当前主机的信息。
  */
-public class HostInfo{
+public class HostInfo {
 
     private final String HOST_NAME;
     private final String HOST_ADDRESS;

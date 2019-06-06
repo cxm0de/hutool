@@ -5,7 +5,7 @@ import cn.hutool.core.util.StrUtil;
 /**
  * 代表当前运行的JRE的信息。
  */
-public class JavaRuntimeInfo{
+public class JavaRuntimeInfo {
 
     private final String JAVA_RUNTIME_NAME = SystemUtil.get("java.runtime.name", false);
     private final String JAVA_RUNTIME_VERSION = SystemUtil.get("java.runtime.version", false);
@@ -41,7 +41,6 @@ public class JavaRuntimeInfo{
      * </p>
      *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
      * @since Java 1.3
      */
     public final String getName() {
@@ -56,7 +55,6 @@ public class JavaRuntimeInfo{
      * </p>
      *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
      * @since Java 1.3
      */
     public final String getVersion() {
@@ -71,7 +69,6 @@ public class JavaRuntimeInfo{
      * </p>
      *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
      * @since Java 1.1
      */
     public final String getHomeDir() {
@@ -86,7 +83,6 @@ public class JavaRuntimeInfo{
      * </p>
      *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
      * @since Java 1.3
      */
     public final String getExtDirs() {
@@ -101,7 +97,6 @@ public class JavaRuntimeInfo{
      * </p>
      *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
      * @since Java 1.4
      */
     public final String getEndorsedDirs() {
@@ -116,7 +111,6 @@ public class JavaRuntimeInfo{
      * </p>
      *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
      * @since Java 1.1
      */
     public final String getClassPath() {
@@ -131,7 +125,6 @@ public class JavaRuntimeInfo{
      * </p>
      *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
      * @since Java 1.1
      */
     public final String[] getClassPathArray() {
@@ -146,7 +139,6 @@ public class JavaRuntimeInfo{
      * </p>
      *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
      * @since Java 1.1
      */
     public final String getClassVersion() {
@@ -161,7 +153,6 @@ public class JavaRuntimeInfo{
      * </p>
      *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
      */
     public final String getLibraryPath() {
         return JAVA_LIBRARY_PATH;
@@ -175,8 +166,6 @@ public class JavaRuntimeInfo{
      * </p>
      *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
-     *
      */
     public final String[] getLibraryPathArray() {
         return StrUtil.split(getLibraryPath(), SystemUtil.get("path.separator", false));
@@ -190,8 +179,6 @@ public class JavaRuntimeInfo{
      * </p>
      *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
-     *
      */
     public final String getProtocolPackages() {
         return SystemUtil.get("java.protocol.handler.pkgs", true);

@@ -1,16 +1,14 @@
 package cn.hutool.aop.test;
 
+import cn.hutool.aop.ProxyUtil;
+import cn.hutool.aop.aspects.TimeIntervalAspect;
 import org.junit.Assert;
 import org.junit.Test;
 
-import cn.hutool.aop.ProxyUtil;
-import cn.hutool.aop.aspects.TimeIntervalAspect;
-
 /**
  * AOP模块单元测试
- * 
- * @author Looly
  *
+ * @author Looly
  */
 public class AopTest {
 
@@ -36,7 +34,6 @@ public class AopTest {
      * 有接口
      *
      * @author looly
-     *
      */
     static class Cat implements Animal {
 
@@ -50,7 +47,6 @@ public class AopTest {
      * 无接口
      *
      * @author looly
-     *
      */
     static class Dog {
         public String eat() {

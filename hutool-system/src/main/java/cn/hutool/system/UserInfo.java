@@ -3,7 +3,7 @@ package cn.hutool.system;
 /**
  * 代表当前用户的信息。
  */
-public class UserInfo{
+public class UserInfo {
 
     private final String USER_NAME = SystemUtil.get("user.name", false);
     private final String USER_HOME = SystemUtil.get("user.home", false);
@@ -20,7 +20,6 @@ public class UserInfo{
      * </p>
      *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
      * @since Java 1.1
      */
     public final String getName() {
@@ -35,7 +34,6 @@ public class UserInfo{
      * </p>
      *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
      * @since Java 1.1
      */
     public final String getHomeDir() {
@@ -50,7 +48,6 @@ public class UserInfo{
      * </p>
      *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
      * @since Java 1.1
      */
     public final String getCurrentDir() {
@@ -65,8 +62,6 @@ public class UserInfo{
      * </p>
      *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
-     *
      */
     public final String getTempDir() {
         return JAVA_IO_TMPDIR;
@@ -80,7 +75,6 @@ public class UserInfo{
      * </p>
      *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
      */
     public final String getLanguage() {
         return USER_LANGUAGE;
@@ -94,7 +88,6 @@ public class UserInfo{
      * </p>
      *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
      */
     public final String getCountry() {
         return USER_COUNTRY;

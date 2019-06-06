@@ -27,9 +27,7 @@ public class JavaInfo {
      * <p>
      * 例如Sun JDK 1.4.2：<code>"1.4.2"</code>
      *
-     *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
      * @since Java 1.1
      */
     public final String getVersion() {
@@ -64,9 +62,7 @@ public class JavaInfo {
      * <li>JDK 1.3.1：<code>131</code></li>
      * </ul>
      *
-     *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>0</code>。
-     *
      * @since Java 1.1
      */
     public final int getVersionInt() {
@@ -121,9 +117,7 @@ public class JavaInfo {
      * <p>
      * 例如Sun JDK 1.4.2：<code>"Sun Microsystems Inc."</code>
      *
-     *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
      * @since Java 1.1
      */
     public final String getVendor() {
@@ -136,9 +130,7 @@ public class JavaInfo {
      * <p>
      * 例如Sun JDK 1.4.2：<code>"http://java.sun.com/"</code>
      *
-     *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
      * @since Java 1.1
      */
     public final String getVendorURL() {
@@ -150,7 +142,6 @@ public class JavaInfo {
      *
      * <p>
      * 如果不能取得系统属性<code>java.version</code>（因为Java安全限制），则总是返回 <code>false</code>
-     *
      *
      * @return 如果当前Java版本为1.1，则返回<code>true</code>
      */
@@ -164,7 +155,6 @@ public class JavaInfo {
      * <p>
      * 如果不能取得系统属性<code>java.version</code>（因为Java安全限制），则总是返回 <code>false</code>
      *
-     *
      * @return 如果当前Java版本为1.2，则返回<code>true</code>
      */
     public final boolean isJava12() {
@@ -176,7 +166,6 @@ public class JavaInfo {
      *
      * <p>
      * 如果不能取得系统属性<code>java.version</code>（因为Java安全限制），则总是返回 <code>false</code>
-     *
      *
      * @return 如果当前Java版本为1.3，则返回<code>true</code>
      */
@@ -190,7 +179,6 @@ public class JavaInfo {
      * <p>
      * 如果不能取得系统属性<code>java.version</code>（因为Java安全限制），则总是返回 <code>false</code>
      *
-     *
      * @return 如果当前Java版本为1.4，则返回<code>true</code>
      */
     public final boolean isJava14() {
@@ -202,7 +190,6 @@ public class JavaInfo {
      *
      * <p>
      * 如果不能取得系统属性<code>java.version</code>（因为Java安全限制），则总是返回 <code>false</code>
-     *
      *
      * @return 如果当前Java版本为1.5，则返回<code>true</code>
      */
@@ -216,7 +203,6 @@ public class JavaInfo {
      * <p>
      * 如果不能取得系统属性<code>java.version</code>（因为Java安全限制），则总是返回 <code>false</code>
      *
-     *
      * @return 如果当前Java版本为1.6，则返回<code>true</code>
      */
     public final boolean isJava16() {
@@ -228,7 +214,6 @@ public class JavaInfo {
      *
      * <p>
      * 如果不能取得系统属性<code>java.version</code>（因为Java安全限制），则总是返回 <code>false</code>
-     *
      *
      * @return 如果当前Java版本为1.7，则返回<code>true</code>
      */
@@ -242,7 +227,6 @@ public class JavaInfo {
      * <p>
      * 如果不能取得系统属性<code>java.version</code>（因为Java安全限制），则总是返回 <code>false</code>
      *
-     *
      * @return 如果当前Java版本为1.8，则返回<code>true</code>
      */
     public final boolean isJava18() {
@@ -253,7 +237,6 @@ public class JavaInfo {
      * 匹配当前Java的版本。
      *
      * @param versionPrefix Java版本前缀
-     *
      * @return 如果版本匹配，则返回<code>true</code>
      */
     private final boolean getJavaVersionMatches(String versionPrefix) {
@@ -276,9 +259,7 @@ public class JavaInfo {
      * <li>测试JDK 1.2.1：<code>isJavaVersionAtLeast(1.31f)</code></li>
      * </ul>
      *
-     *
      * @param requiredVersion 需要的版本
-     *
      * @return 如果当前Java版本大于或等于指定的版本，则返回<code>true</code>
      */
     public final boolean isJavaVersionAtLeast(float requiredVersion) {
@@ -297,9 +278,7 @@ public class JavaInfo {
      * <li>测试JDK 1.2.1：<code>isJavaVersionAtLeast(131)</code></li>
      * </ul>
      *
-     *
      * @param requiredVersion 需要的版本
-     *
      * @return 如果当前Java版本大于或等于指定的版本，则返回<code>true</code>
      */
     public final boolean isJavaVersionAtLeast(int requiredVersion) {

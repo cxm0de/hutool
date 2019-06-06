@@ -3,7 +3,7 @@ package cn.hutool.system;
 /**
  * 代表Java Specification的信息。
  */
-public class JavaSpecInfo{
+public class JavaSpecInfo {
 
     private final String JAVA_SPECIFICATION_NAME = SystemUtil.get("java.specification.name", false);
     private final String JAVA_SPECIFICATION_VERSION = SystemUtil.get("java.specification.version", false);
@@ -17,7 +17,6 @@ public class JavaSpecInfo{
      * </p>
      *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
      */
     public final String getName() {
         return JAVA_SPECIFICATION_NAME;
@@ -31,7 +30,6 @@ public class JavaSpecInfo{
      * </p>
      *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
      * @since Java 1.3
      */
     public final String getVersion() {
@@ -46,7 +44,6 @@ public class JavaSpecInfo{
      * </p>
      *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
      */
     public final String getVendor() {
         return JAVA_SPECIFICATION_VENDOR;

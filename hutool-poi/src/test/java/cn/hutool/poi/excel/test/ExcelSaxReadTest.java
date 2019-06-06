@@ -12,11 +12,11 @@ import cn.hutool.core.lang.Console;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.poi.excel.ExcelUtil;
 import cn.hutool.poi.excel.sax.Excel03SaxReader;
-import cn.hutool.poi.excel.sax.Excel07SaxReader;
 import cn.hutool.poi.excel.sax.handler.RowHandler;
 
 /**
  * Excel sax方式读取
+ * 
  * @author looly
  *
  */
@@ -29,7 +29,7 @@ public class ExcelSaxReadTest {
 
             @Override
             public void handle(int sheetIndex, int rowIndex, List<Object> rowList) {
-                if(StrUtil.isAllEmpty(Convert.toStrArray(rowList))) {
+                if (StrUtil.isAllEmpty(Convert.toStrArray(rowList))) {
                     return;
                 }
                 Console.log(rowList);
@@ -67,10 +67,7 @@ public class ExcelSaxReadTest {
 
     @Test
     public void excel07Test() {
-        Excel07SaxReader reader = new Excel07SaxReader(createRowHandler());
-        reader.read("aaa.xlsx", 0);
-
-        //工具化快速读取
+        // 工具化快速读取
         ExcelUtil.read07BySax("aaa.xlsx", 0, createRowHandler());
     }
 
@@ -78,8 +75,14 @@ public class ExcelSaxReadTest {
     public void excel03Test() {
         Excel03SaxReader reader = new Excel03SaxReader(createRowHandler());
         reader.read("aaa.xls", 1);
-//        Console.log("Sheet index: [{}], Sheet name: [{}]", reader.getSheetIndex(), reader.getSheetName());
+        // Console.log("Sheet index: [{}], Sheet name: [{}]", reader.getSheetIndex(), reader.getSheetName());
         ExcelUtil.read03BySax("aaa.xls", 1, createRowHandler());
+    }
+
+    @Test
+    @Ignore
+    public void readBySaxTest4() {
+        ExcelUtil.readBySax("e:/excel/single_line.xlsx", 2, createRowHandler());
     }
 
     private RowHandler createRowHandler() {
@@ -88,8 +91,8 @@ public class ExcelSaxReadTest {
             @Override
             public void handle(int sheetIndex, int rowIndex, List<Object> rowlist) {
 //                Console.log("[{}] [{}] {}", sheetIndex, rowIndex, rowlist);
-                if(5 != rowIndex && 6 != rowIndex) {
-                    //测试样例中除第五行、第六行都为非空行
+                if (5 != rowIndex && 6 != rowIndex) {
+                    // 测试样例中除第五行、第六行都为非空行
                     Assert.assertTrue(CollUtil.isNotEmpty(rowlist));
                 }
             }

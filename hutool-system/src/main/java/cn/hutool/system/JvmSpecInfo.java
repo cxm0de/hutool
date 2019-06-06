@@ -17,7 +17,6 @@ public class JvmSpecInfo {
      * </p>
      *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
      */
     public final String getName() {
         return JAVA_VM_SPECIFICATION_NAME;
@@ -31,7 +30,6 @@ public class JvmSpecInfo {
      * </p>
      *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
      */
     public final String getVersion() {
         return JAVA_VM_SPECIFICATION_VERSION;
@@ -45,7 +43,6 @@ public class JvmSpecInfo {
      * </p>
      *
      * @return 属性值，如果不能取得（因为Java安全限制）或值不存在，则返回<code>null</code>。
-     *
      */
     public final String getVendor() {
         return JAVA_VM_SPECIFICATION_VENDOR;
